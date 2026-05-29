@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800 antialiased;
+  }
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded border-2 border-brand px-5 py-2.5 text-sm font-semibold text-brand hover:bg-brand hover:text-white;
+  }
+  .section-title {
+    @apply text-center text-2xl font-bold uppercase tracking-wide text-brand md:text-3xl;
+  }
+  .product-card {
+    @apply overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md;
+  }
+  .container-site {
+    @apply mx-auto w-full max-w-site px-4;
+  }
+  /* Logo từ Customizer – giới hạn kích thước (file upload thường rất lớn) */
+  .site-logo .custom-logo-link {
+    @apply inline-flex items-center;
+  }
+  .site-logo .custom-logo {
+    @apply h-auto w-auto max-h-14 max-w-[200px] object-contain md:max-h-16 md:max-w-[260px];
+  }
+  .hero-slider .hero-slide {
+    @apply hidden;
+  }
+  .hero-slider .hero-slide.active {
+    @apply block;
+  }
+  .hero-slide--image {
+    @apply relative bg-cover bg-center bg-no-repeat;
+  }
+  .hero-slide-overlay {
+    @apply absolute inset-0 bg-black/45;
+  }
+  .hero-slide-content {
+    @apply relative z-10;
+  }
+  .woocommerce .products {
+    @apply grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  .woocommerce .products .product {
+    @apply list-none;
+  }
+  /* Mega menu – full width under nav */
+  .mega-menu-panel.is-open {
+    @apply visible opacity-100 pointer-events-auto;
+  }
+  .mega-menu-col-accessories ul {
+    @apply max-h-72 overflow-y-auto pr-2;
+  }
+  /* WooCommerce pagination (default WC CSS disabled) */
+  .woocommerce nav.woocommerce-pagination {
+    @apply mt-10 clear-both;
+  }
+  .woocommerce nav.woocommerce-pagination ul.page-numbers {
+    @apply flex flex-wrap list-none items-center justify-center gap-2 p-0;
+  }
+  .woocommerce nav.woocommerce-pagination ul.page-numbers li {
+    @apply m-0 list-none;
+  }
+  .woocommerce nav.woocommerce-pagination ul.page-numbers a,
+  .woocommerce nav.woocommerce-pagination ul.page-numbers span {
+    @apply inline-flex min-h-[2.25rem] min-w-[2.25rem] items-center justify-center rounded border border-gray-300 px-3 py-1 text-sm text-gray-700 no-underline hover:border-brand hover:text-brand;
+  }
+  .woocommerce nav.woocommerce-pagination ul.page-numbers span.current {
+    @apply border-brand bg-brand text-white;
+  }
+  /* WordPress posts pagination */
+  .navigation.pagination .nav-links,
+  nav.pagination .nav-links {
+    @apply flex flex-wrap list-none items-center justify-center gap-2 p-0;
+  }
+  .navigation.pagination .page-numbers,
+  nav.pagination .page-numbers {
+    @apply inline-flex min-h-[2.25rem] min-w-[2.25rem] items-center justify-center rounded border border-gray-300 px-3 py-1 text-sm no-underline hover:border-brand hover:text-brand;
+  }
+  .navigation.pagination .page-numbers.current,
+  nav.pagination .page-numbers.current {
+    @apply border-brand bg-brand text-white;
+  }
+}
