@@ -17,7 +17,13 @@ for ( $i = 1; $i <= 6; $i++ ) {
 ?>
 <section class="py-10">
 	<div class="container-site text-center">
-		<h2 class="section-title mb-8"><?php echo esc_html( $title ); ?></h2>
+		<div class="section-title-container mb-8">
+			<h2 class="section-title section-title-center">
+				<b></b>
+				<span class="section-title-main"><?php echo esc_html( $title ); ?></span>
+				<b></b>
+			</h2>
+		</div>
 		<?php if ( ! empty( $partners ) ) : ?>
 			<div class="flex flex-wrap items-center justify-center gap-8">
 				<?php foreach ( $partners as $partner ) : ?>

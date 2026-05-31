@@ -19,9 +19,15 @@ if ( empty( $quotes ) ) {
 	$quotes = goldenbee_default_media_quotes();
 }
 ?>
-<section class="py-12">
+<section class="py-8 md:py-12">
 	<div class="container-site">
-		<h2 class="section-title mb-8"><?php echo esc_html( $title ); ?></h2>
+		<div class="section-title-container mb-8">
+			<h2 class="section-title section-title-center">
+				<b></b>
+				<span class="section-title-main"><?php echo esc_html( $title ); ?></span>
+				<b></b>
+			</h2>
+		</div>
 		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
 			<?php foreach ( $quotes as $q ) : ?>
 				<blockquote class="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">

@@ -19,8 +19,8 @@ function goldenbee_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 	add_theme_support( 'custom-logo', array(
-		'height'      => 64,
-		'width'       => 260,
+		'height'      => 90,
+		'width'       => 200,
 		'flex-height' => true,
 		'flex-width'  => true,
 	) );
@@ -64,9 +64,16 @@ function goldenbee_enqueue_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style(
+		'goldenbee-fonts',
+		'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap',
+		array(),
+		null
+	);
+
+	wp_enqueue_style(
 		'goldenbee-style',
 		get_template_directory_uri() . '/assets/style.css',
-		array(),
+		array( 'goldenbee-fonts' ),
 		$theme_version
 	);
 

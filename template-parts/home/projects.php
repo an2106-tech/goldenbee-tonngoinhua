@@ -11,9 +11,15 @@ $projects = new WP_Query( array(
 	'post_status'    => 'publish',
 ) );
 ?>
-<section class="py-12 md:py-16">
+<section class="py-8 md:py-12">
 	<div class="container-site">
-		<h2 class="section-title mb-10"><?php esc_html_e( 'Công trình sử dụng tôn ngói nhựa Green BM', 'goldenbee' ); ?></h2>
+		<div class="section-title-container mb-8">
+			<h2 class="section-title section-title-center">
+				<b></b>
+				<span class="section-title-main"><?php esc_html_e( 'Công trình sử dụng tôn ngói nhựa Green BM sản xuất lợp mái', 'goldenbee' ); ?></span>
+				<b></b>
+			</h2>
+		</div>
 		<?php if ( $projects->have_posts() ) : ?>
 			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				<?php while ( $projects->have_posts() ) : $projects->the_post(); ?>

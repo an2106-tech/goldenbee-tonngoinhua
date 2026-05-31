@@ -12,7 +12,13 @@ $news = new WP_Query( array(
 ?>
 <section class="bg-gray-100 py-12 md:py-16">
 	<div class="container-site">
-		<h2 class="section-title mb-10"><?php esc_html_e( 'Bài viết nổi bật', 'goldenbee' ); ?></h2>
+		<div class="section-title-container mb-10">
+			<h2 class="section-title section-title-center">
+				<b></b>
+				<span class="section-title-main"><?php esc_html_e( 'Bài viết nổi bật', 'goldenbee' ); ?></span>
+				<b></b>
+			</h2>
+		</div>
 		<?php if ( $news->have_posts() ) : ?>
 			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				<?php while ( $news->have_posts() ) : $news->the_post(); ?>

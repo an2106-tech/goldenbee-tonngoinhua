@@ -9,17 +9,25 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: '#1a7a3c',
-          dark: '#145f2f',
-          light: '#22a34d',
+          DEFAULT: '#003481',
+          dark: '#002a66',
+          light: '#4568ff',
         },
-        accent: '#f5a623',
+        secondary: {
+          DEFAULT: '#6bca1e',
+          dark: '#2ba249',
+        },
+        accent: {
+          DEFAULT: '#ff6600',
+          phone: '#333399',
+        },
       },
       fontFamily: {
-        sans: ['Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Roboto', 'Arial', 'sans-serif'],
+        nav: ['Montserrat', 'Arial', 'sans-serif'],
       },
       maxWidth: {
-        site: '1200px',
+        site: '1250px',
       },
     },
   },

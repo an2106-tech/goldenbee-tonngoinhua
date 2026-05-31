@@ -25,8 +25,11 @@ function goldenbee_customize_register( $wp_customize ) {
 		'address'        => array( 'label' => 'Địa chỉ', 'default' => 'P. An Phú Đông, TP.HCM' ),
 		'hours'          => array( 'label' => 'Giờ làm việc', 'default' => '08:00 - 17:00 (T2 - T7)' ),
 		'zalo_url'       => array( 'label' => 'Zalo URL', 'default' => 'https://zalo.me/0911469969' ),
-		'messenger_url'  => array( 'label' => 'Messenger URL', 'default' => 'https://m.me/' ),
-		'facebook_url'   => array( 'label' => 'Facebook URL', 'default' => '' ),
+		'messenger_url'  => array( 'label' => 'Messenger URL', 'default' => 'https://m.me/tonngoinhua.vn/' ),
+		'facebook_url'   => array( 'label' => 'Facebook URL', 'default' => 'https://www.facebook.com/tonngoinhua.vn/' ),
+		'map_url'        => array( 'label' => 'Google Map URL (header)', 'default' => 'https://www.google.com/maps/place/C%C3%B4ng+ty+CP+%C4%90%E1%BA%A7u+t%C6%B0+XNK+V%E1%BA%ADt+Li%E1%BB%87u+Xanh/@10.860653,106.695919,16z' ),
+		'factory_address'=> array( 'label' => 'Địa chỉ nhà máy', 'default' => 'Đường số 2 Cụm Công nghiệp Hoàng Gia, Ấp 2, Xã Mỹ Hạnh, Tỉnh Tây Ninh' ),
+		'office_address' => array( 'label' => 'Địa chỉ văn phòng', 'default' => 'Lầu 1, 1605/1A Quốc Lộ 1A, P. An Phú Đông, TP. Hồ Chí Minh' ),
 		'map_embed'      => array( 'label' => 'Google Map embed URL', 'default' => '' ),
 	);
 

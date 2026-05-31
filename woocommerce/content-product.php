@@ -1,6 +1,6 @@
 <?php
 /**
- * Product card in loop.
+ * Product card – Flatsome proHome style.
  *
  * @package GoldenBee
  */
@@ -12,18 +12,31 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+
+$permalink = $product->get_permalink();
+$price_html = $product->get_price_html();
+if ( ! $product->get_price() && ! $product->is_type( 'variable' ) ) {
+	$price_html = '<span class="price"><span class="woocommerce-Price-amount amount">' . esc_html__( 'Giá: Liên hệ', 'goldenbee' ) . '</span></span>';
+}
 ?>
-<li <?php wc_product_class( 'product-card list-none', $product ); ?>>
-	<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="block">
-		<div class="relative overflow-hidden bg-gray-100">
-			<?php echo $product->get_image( 'goldenbee-card', array( 'class' => 'aspect-square w-full object-cover transition hover:scale-105' ) ); ?>
+<li <?php wc_product_class( 'pro-home list-none', $product ); ?>>
+	<div class="box-image">
+		<div class="image-cover">
+			<a href="<?php echo esc_url( $permalink ); ?>" aria-label="<?php echo esc_attr( $product->get_name() ); ?>">
+				<?php echo $product->get_image( 'woocommerce_thumbnail', array( 'class' => 'attachment-original size-original' ) ); ?>
+			</a>
 		</div>
-		<div class="p-4">
-			<h2 class="text-sm font-semibold text-gray-800 line-clamp-2 hover:text-brand"><?php echo esc_html( $product->get_name() ); ?></h2>
-			<div class="mt-2 text-brand font-semibold">
-				<?php echo wp_kses_post( $product->get_price_html() ); ?>
-			</div>
-			<span class="mt-3 inline-block text-xs font-bold uppercase text-brand"><?php esc_html_e( 'Xem ngay', 'goldenbee' ); ?></span>
+	</div>
+	<div class="box-text text-left">
+		<div class="title-wrapper">
+			<p class="name product-title woocommerce-loop-product__title">
+				<a href="<?php echo esc_url( $permalink ); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><?php echo esc_html( $product->get_name() ); ?></a>
+			</p>
 		</div>
-	</a>
+		<div class="price-wrapper">
+			<?php echo wp_kses_post( $price_html ); ?>
+		</div>
+		<div class="xemngaygia tv"><a href="<?php echo esc_url( $permalink ); ?>"><?php esc_html_e( 'Xem ngay', 'goldenbee' ); ?></a></div>
+		<div class="xemngaygia ta"><a href="<?php echo esc_url( $permalink ); ?>"><?php esc_html_e( 'See now', 'goldenbee' ); ?></a></div>
+	</div>
 </li>

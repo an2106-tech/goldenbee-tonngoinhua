@@ -3,93 +3,417 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply text-gray-800 antialiased;
+  :root {
+    --primary-color: #003481;
+    --secondary-color: #6bca1e;
+    --text-color: #0a0a0a;
   }
+
+  html {
+    background-color: #003481;
+  }
+
+  body {
+    @apply font-sans text-[14px] leading-[25px] text-[#0a0a0a] antialiased;
+    background-color: #fff;
+  }
+
   a {
-    @apply transition-colors duration-200;
+    @apply transition-all duration-150;
+  }
+
+  p {
+    margin-bottom: 10px;
+    line-height: 25px;
+    font-size: 14px;
   }
 }
 
 @layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark;
-  }
-  .btn-outline {
-    @apply inline-flex items-center justify-center rounded border-2 border-brand px-5 py-2.5 text-sm font-semibold text-brand hover:bg-brand hover:text-white;
-  }
-  .section-title {
-    @apply text-center text-2xl font-bold uppercase tracking-wide text-brand md:text-3xl;
-  }
-  .product-card {
-    @apply overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md;
-  }
   .container-site {
-    @apply mx-auto w-full max-w-site px-4;
+    @apply mx-auto w-full max-w-site px-[15px];
   }
-  /* Logo từ Customizer – giới hạn kích thước (file upload thường rất lớn) */
+
+  .site-header {
+    @apply sticky top-0 z-50 bg-white shadow-none;
+  }
+
+  .header-main {
+    @apply h-[90px] border-b border-[#ececec];
+  }
+
+  .site-header.is-stuck .header-main {
+    @apply h-[70px];
+  }
+
   .site-logo .custom-logo-link {
     @apply inline-flex items-center;
   }
+
   .site-logo .custom-logo {
-    @apply h-auto w-auto max-h-14 max-w-[200px] object-contain md:max-h-16 md:max-w-[260px];
+    @apply h-auto w-[200px] max-h-[90px] max-w-[200px] object-contain;
   }
-  .hero-slider .hero-slide {
-    @apply hidden;
+
+  .site-header.is-stuck .site-logo .custom-logo {
+    @apply max-h-[70px];
   }
-  .hero-slider .hero-slide.active {
-    @apply block;
+
+  .header-icon-box {
+    @apply flex items-start gap-2 text-left;
   }
-  .hero-slide--image {
-    @apply relative bg-cover bg-center bg-no-repeat;
+
+  .header-icon-box img {
+    @apply mt-0.5 h-[26px] w-auto shrink-0;
   }
-  .hero-slide-overlay {
-    @apply absolute inset-0 bg-black/45;
+
+  .header-icon-box p {
+    @apply mb-0 text-[13px] leading-snug text-[#0a0a0a];
   }
-  .hero-slide-content {
-    @apply relative z-10;
+
+  .header-icon-box .highlight-orange {
+    @apply text-[150%] font-bold text-accent;
   }
-  .woocommerce .products {
-    @apply grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+
+  .header-icon-box .highlight-phone {
+    @apply text-[150%] font-bold text-accent-phone no-underline;
   }
-  .woocommerce .products .product {
-    @apply list-none;
+
+  .header-icon-box .highlight-map {
+    @apply text-[120%] text-accent no-underline;
   }
-  /* Mega menu – full width under nav */
+
+  .header-cart-link {
+    @apply flex items-center gap-2 text-[14px] font-semibold text-brand no-underline;
+  }
+
+  .header-cart-link svg {
+    @apply h-6 w-6;
+  }
+
+  .header-bottom {
+    @apply min-h-[50px] bg-brand;
+  }
+
+  .header-bottom-nav {
+    @apply m-0 flex list-none flex-wrap items-stretch p-0;
+  }
+
+  .header-bottom-nav > li > a {
+    @apply block px-[13px] py-[13px] font-nav text-[15px] font-bold uppercase leading-[25px] text-white no-underline;
+  }
+
+  .header-bottom-nav > li > a:hover,
+  .header-bottom-nav > li.current-menu-item > a,
+  .header-bottom-nav > li > a.nav-active {
+    @apply bg-secondary;
+  }
+
+  .mega-menu-panel {
+    @apply pointer-events-none invisible absolute left-0 right-0 top-full z-50 border border-dotted border-brand bg-white opacity-0 shadow-lg transition-opacity duration-150;
+  }
+
   .mega-menu-panel.is-open {
-    @apply visible opacity-100 pointer-events-auto;
+    @apply pointer-events-auto visible opacity-100;
   }
+
   .mega-menu-col-accessories ul {
     @apply max-h-72 overflow-y-auto pr-2;
   }
-  /* WooCommerce pagination (default WC CSS disabled) */
-  .woocommerce nav.woocommerce-pagination {
-    @apply mt-10 clear-both;
+
+  .hero-slider {
+    @apply relative w-full overflow-hidden bg-[#f5f5f5];
   }
+
+  .hero-slider .hero-slide {
+    @apply hidden;
+  }
+
+  .hero-slider .hero-slide.active {
+    @apply block;
+  }
+
+  .hero-slide-image img {
+    @apply block h-auto w-full max-h-[830px] object-cover;
+  }
+
+  .hero-dots {
+    @apply absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2;
+  }
+
+  .hero-dot {
+    @apply h-2.5 w-2.5 rounded-full bg-white/50;
+  }
+
+  .hero-dot.active {
+    @apply bg-white;
+  }
+
+  .content-clip h1,
+  .content-clip h2 {
+    @apply mb-4 text-center text-[25px] font-bold uppercase text-brand;
+  }
+
+  .content-clip p {
+    @apply text-justify text-[16px] leading-[25px];
+  }
+
+  .btn-intro {
+    @apply mt-4 inline-block rounded-[5px] border-2 border-dotted border-brand bg-transparent px-[15px] py-[2px] text-[14px] lowercase text-brand no-underline;
+  }
+
+  .btn-intro:hover {
+    @apply bg-brand text-white;
+  }
+
+  .section-title-container {
+    @apply mb-[30px];
+  }
+
+  .section-title {
+    @apply relative flex items-center justify-center gap-3 text-center;
+  }
+
+  .section-title b {
+    @apply inline-block h-px max-w-[80px] flex-1 bg-transparent;
+  }
+
+  .section-title-main {
+    @apply text-[30px] font-bold uppercase text-brand;
+  }
+
+  .section-title-footer .section-title-main {
+    @apply text-[18px] normal-case text-white;
+  }
+
+  .section-title-footer .section-title {
+    @apply justify-start border-b-2 border-white pb-1;
+  }
+
+  .title-news {
+    @apply relative clear-both mb-[15px] border border-[#eee];
+  }
+
+  .title-news h2 {
+    @apply m-0 text-[20px] font-bold leading-none;
+  }
+
+  .title-news h2 span {
+    @apply relative inline-block bg-brand py-0 pl-3 pr-2 text-[16px] font-bold capitalize leading-[35px] text-white;
+  }
+
+  .title-news h2 span::before {
+    content: ' ';
+    @apply absolute right-[-15px] top-0 block h-0 w-0;
+    border-top: 18px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 15px solid #003481;
+  }
+
+  .title-news .right-lsm {
+    @apply absolute right-[5px] top-1/2 -translate-y-1/2;
+  }
+
+  .link-see-more {
+    @apply inline-block bg-white text-[15px] text-brand no-underline;
+  }
+
+  .products-grid-home {
+    @apply grid list-none gap-[15px] p-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+
+  .pro-home {
+    @apply relative clear-both overflow-hidden bg-white;
+  }
+
+  .pro-home .box-image {
+    @apply relative overflow-hidden;
+  }
+
+  .pro-home .image-cover {
+    @apply relative block pt-[100%];
+  }
+
+  .pro-home .image-cover img {
+    @apply absolute inset-0 h-[180px] w-full border border-[#d6d6d6] object-contain;
+  }
+
+  .pro-home .box-text {
+    @apply relative px-0 pb-2 pt-2 text-left;
+    min-height: 110px;
+  }
+
+  .pro-home .product-title {
+    @apply m-0 text-[16px] font-bold leading-snug;
+  }
+
+  .pro-home .product-title a {
+    @apply line-clamp-1 text-brand no-underline;
+  }
+
+  .pro-home .price-wrapper .price {
+    @apply mt-[15px] text-[16px] font-bold text-red-600;
+  }
+
+  .xemngaygia {
+    @apply absolute bottom-[15px] right-0;
+  }
+
+  .xemngaygia a {
+    @apply inline-block rounded-[5px] border-2 border-dotted border-brand px-[5px] py-[2px] text-[13px] text-brand no-underline;
+  }
+
+  .xemngaygia a:hover {
+    @apply bg-brand text-white;
+  }
+
+  .woocommerce .products {
+    @apply grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
   .woocommerce nav.woocommerce-pagination ul.page-numbers {
     @apply flex flex-wrap list-none items-center justify-center gap-2 p-0;
   }
-  .woocommerce nav.woocommerce-pagination ul.page-numbers li {
-    @apply m-0 list-none;
-  }
-  .woocommerce nav.woocommerce-pagination ul.page-numbers a,
-  .woocommerce nav.woocommerce-pagination ul.page-numbers span {
-    @apply inline-flex min-h-[2.25rem] min-w-[2.25rem] items-center justify-center rounded border border-gray-300 px-3 py-1 text-sm text-gray-700 no-underline hover:border-brand hover:text-brand;
-  }
+
   .woocommerce nav.woocommerce-pagination ul.page-numbers span.current {
     @apply border-brand bg-brand text-white;
   }
-  /* WordPress posts pagination */
-  .navigation.pagination .nav-links,
-  nav.pagination .nav-links {
-    @apply flex flex-wrap list-none items-center justify-center gap-2 p-0;
+
+  .site-footer-main {
+    @apply bg-brand py-[30px] text-white;
   }
-  .navigation.pagination .page-numbers,
-  nav.pagination .page-numbers {
-    @apply inline-flex min-h-[2.25rem] min-w-[2.25rem] items-center justify-center rounded border border-gray-300 px-3 py-1 text-sm no-underline hover:border-brand hover:text-brand;
+
+  .site-footer-main h4 {
+    @apply mb-2 text-[16px] font-bold uppercase;
   }
-  .navigation.pagination .page-numbers.current,
-  nav.pagination .page-numbers.current {
-    @apply border-brand bg-brand text-white;
+
+  .site-footer-main p {
+    @apply mb-2 pl-[30px] text-[15px] font-semibold;
+  }
+
+  .site-footer-main p.footer-address {
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/adress.png') left center / 21px 21px no-repeat;
+  }
+
+  .site-footer-main p.footer-phone {
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/phone-call.png') left center / 21px 21px no-repeat;
+  }
+
+  .site-footer-main p.footer-email {
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/envelope.png') left center / 21px 21px no-repeat;
+  }
+
+  .site-footer-main a {
+    @apply text-white no-underline hover:underline;
+  }
+
+  .footer-newsletter input {
+    @apply min-h-[50px] w-full rounded-[5px] border border-white/30 bg-transparent px-3 text-white placeholder:text-white/70 focus:outline-none;
+  }
+
+  .footer-newsletter button {
+    @apply mt-2 w-full rounded-[5px] bg-white py-2 text-brand hover:bg-gray-100;
+  }
+
+  .absolute-footer {
+    @apply border-t border-white bg-brand py-[10px] text-center text-[13px] text-white;
+  }
+
+  .contact-social {
+    @apply fixed bottom-0 left-0 z-[99999] hidden md:block;
+  }
+
+  .contact-tus {
+    @apply relative;
+  }
+
+  .note-social {
+    @apply relative bottom-[25px] left-0 block h-[70px] w-[90px] cursor-pointer;
+  }
+
+  .phone-vr-circle-fill {
+    @apply absolute left-3 top-3 h-[65px] w-[65px] rounded-full border-2 border-transparent;
+    background-color: rgba(230, 8, 8, 0.7);
+    animation: phone-pulse 2.3s infinite ease-in-out;
+  }
+
+  .phone-vr-img-circle {
+    @apply absolute left-[25px] top-[25px] flex h-10 w-10 items-center justify-center rounded-full;
+    background-color: #e60808;
+  }
+
+  .phone-vr-img-circle img {
+    @apply h-[22px] w-[22px] object-contain;
+  }
+
+  .zaloFt .phone-vr-circle-fill,
+  .zaloFt .phone-vr-img-circle {
+    background-color: #0068ff;
+  }
+
+  .faceFt .phone-vr-circle-fill,
+  .faceFt .phone-vr-img-circle {
+    background-color: #0084ff;
+  }
+
+  .contact-bar {
+    @apply absolute bottom-0 left-[70px] hidden whitespace-nowrap rounded-r-full px-4 py-1 text-[13px] font-semibold text-white;
+    background-color: rgba(230, 8, 8, 0.85);
+  }
+
+  .zaloFt .contact-bar {
+    background-color: rgba(0, 104, 255, 0.85);
+  }
+
+  .faceFt .contact-bar {
+    background-color: rgba(0, 132, 255, 0.85);
+  }
+
+  .contact-tus:hover .contact-bar {
+    @apply block;
+  }
+
+  .back-to-top {
+    @apply fixed bottom-6 right-6 z-40 hidden h-10 w-10 items-center justify-center rounded-full border-2 border-brand bg-white text-brand shadow-md hover:bg-brand hover:text-white md:flex;
+  }
+}
+
+@keyframes phone-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 8, 8, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(230, 8, 8, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 8, 8, 0);
+  }
+}
+
+@media (max-width: 849px) {
+  .header-contact-row {
+    @apply hidden;
+  }
+
+  .header-main {
+    @apply h-[70px];
+  }
+
+  .site-logo .custom-logo {
+    @apply max-h-[70px] max-w-[130px];
+  }
+}
+
+@media (max-width: 375px) {
+  .xemngaygia {
+    @apply relative bottom-0 block w-full;
+  }
+
+  .pro-home .box-text {
+    min-height: 90px;
+    @apply py-1.5;
+  }
+
+  .pro-home .price-wrapper .price {
+    @apply mt-0 text-[14px];
   }
 }

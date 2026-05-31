@@ -15,9 +15,15 @@ for ( $i = 1; $i <= 6; $i++ ) {
 	}
 }
 ?>
-<section class="bg-gray-100 py-12">
+<section class="bg-[#f5f5f5] py-8 md:py-12">
 	<div class="container-site">
-		<h2 class="section-title mb-8"><?php echo esc_html( $title ); ?></h2>
+		<div class="section-title-container mb-8">
+			<h2 class="section-title section-title-center">
+				<b></b>
+				<span class="section-title-main"><?php echo esc_html( $title ); ?></span>
+				<b></b>
+			</h2>
+		</div>
 		<?php if ( ! empty( $images ) ) : ?>
 			<div class="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-6">
 				<?php foreach ( $images as $image ) : ?>
