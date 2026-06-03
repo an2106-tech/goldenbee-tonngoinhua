@@ -10,7 +10,7 @@ get_header();
 <main class="py-10">
 	<div class="container-site max-w-4xl">
 		<h1 class="section-title mb-8"><?php the_title(); ?></h1>
-		<div class="prose prose-lg max-w-none">
+		<div class="prose prose-lg max-w-none text-justify">
 			<?php
 			while ( have_posts() ) :
 				the_post();

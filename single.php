@@ -16,7 +16,7 @@ get_header();
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="mb-6 overflow-hidden rounded-lg"><?php the_post_thumbnail( 'large', array( 'class' => 'w-full' ) ); ?></div>
 				<?php endif; ?>
-				<div class="prose prose-lg max-w-none"><?php the_content(); ?></div>
+				<div class="prose prose-lg max-w-none text-justify"><?php the_content(); ?></div>
 			</article>
 		<?php endwhile; ?>
 	</div>

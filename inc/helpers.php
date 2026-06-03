@@ -30,17 +30,22 @@ function goldenbee_acf_post_id() {
  * @return mixed
  */
 function goldenbee_get_option_field( $name, $default = '' ) {
-    if ( function_exists( 'get_field' ) ) {
-        $post_id = goldenbee_acf_post_id();
-        if ( ! $post_id ) {
-            return $default;
-        }
-        $value = get_field( $name, $post_id );
-        if ( null !== $value && false !== $value && '' !== $value ) {
-            return $value;
-        }
-    }
-    return $default;
+	if ( function_exists( 'get_field' ) ) {
+		$post_id = goldenbee_acf_post_id();
+		if ( ! $post_id ) {
+			return $default;
+		}
+
+		// Try several name variants to avoid collisions and keep backward compatibility.
+		$candidates = array( $name, 'goldenbee_' . $name, 'gb_' . $name );
+		foreach ( $candidates as $n ) {
+			$value = get_field( $n, $post_id );
+			if ( null !== $value && false !== $value && '' !== $value ) {
+				return $value;
+			}
+		}
+	}
+	return $default;
 }
 
 /**
@@ -130,6 +135,44 @@ function goldenbee_product_link( $slug ) {
         return get_permalink( $post );
     }
     return goldenbee_category_link( '' );
+}
+
+/**
+ * Normalize YouTube URLs for iframe embed usage.
+ *
+ * @param string $url Input URL from ACF.
+ * @return string
+ */
+function goldenbee_get_youtube_embed_url( $url ) {
+	if ( ! $url ) {
+		return '';
+	}
+
+	$url = trim( $url );
+	if ( false !== strpos( $url, 'youtube.com/watch' ) || false !== strpos( $url, 'youtu.be/' ) ) {
+		$parsed = wp_parse_url( $url );
+		if ( ! empty( $parsed['host'] ) ) {
+			if ( false !== strpos( $parsed['host'], 'youtu.be' ) ) {
+				$path = ltrim( $parsed['path'], '/' );
+				return 'https://www.youtube.com/embed/' . rawurlencode( $path );
+			}
+
+			if ( ! empty( $parsed['query'] ) ) {
+				parse_str( $parsed['query'], $query_args );
+				if ( ! empty( $query_args['v'] ) ) {
+					return 'https://www.youtube.com/embed/' . rawurlencode( $query_args['v'] );
+				}
+			}
+			if ( ! empty( $parsed['path'] ) ) {
+				$path = trim( $parsed['path'], '/' );
+				if ( $path ) {
+					return 'https://www.youtube.com/embed/' . rawurlencode( $path );
+				}
+			}
+		}
+	}
+
+	return $url;
 }
 
 /**

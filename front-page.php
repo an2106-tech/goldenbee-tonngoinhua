@@ -11,6 +11,7 @@ get_header();
 	<?php
 	get_template_part( 'template-parts/home/hero', 'slider' );
 	get_template_part( 'template-parts/home/intro' );
+	get_template_part( 'template-parts/home/intro-video' );
 	get_template_part( 'template-parts/home/featured', 'products' );
 	get_template_part( 'template-parts/home/projects' );
 	get_template_part( 'template-parts/home/events' );
