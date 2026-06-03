@@ -106,7 +106,7 @@ function goldenbee_register_acf_field_groups() {
 		array(
 			array(
 				'key'   => 'field_gb_tab_partners',
-				'label' => __( 'Đối tác', 'goldenbee' ),
+				'label' => __( 'Khách hàng', 'goldenbee' ),
 				'name'  => '',
 				'type'  => 'tab',
 			),

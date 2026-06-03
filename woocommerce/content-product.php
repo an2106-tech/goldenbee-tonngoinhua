@@ -37,6 +37,5 @@ if ( ! $product->get_price() && ! $product->is_type( 'variable' ) ) {
 			<?php echo wp_kses_post( $price_html ); ?>
 		</div>
 		<div class="xemngaygia tv"><a href="<?php echo esc_url( $permalink ); ?>"><?php esc_html_e( 'Xem ngay', 'goldenbee' ); ?></a></div>
-		<div class="xemngaygia ta"><a href="<?php echo esc_url( $permalink ); ?>"><?php esc_html_e( 'See now', 'goldenbee' ); ?></a></div>
 	</div>
 </li>

@@ -214,29 +214,196 @@ function goldenbee_default_hero_slides() {
 }
 
 /**
- * Default media quotes.
+ * Base URL for bundled default media images (theme assets, không hotlink).
+ *
+ * @return string
+ */
+function goldenbee_media_asset_base() {
+	return get_template_directory_uri() . '/assets/images/media';
+}
+
+/**
+ * Merge ACF media group với default theo index (bù ảnh/text còn thiếu).
+ *
+ * @param array|null $acf     ACF group.
+ * @param array      $default Default row.
+ * @param array      $keys    Keys to merge.
+ * @return array
+ */
+function goldenbee_merge_media_group( $acf, $default, $keys ) {
+	$out = $default;
+	if ( is_array( $acf ) ) {
+		foreach ( $keys as $key ) {
+			if ( ! isset( $acf[ $key ] ) ) {
+				continue;
+			}
+			$val = $acf[ $key ];
+			if ( in_array( $key, array( 'quote_logo', 'press_image' ), true ) ) {
+				if ( goldenbee_acf_image_url( $val ) ) {
+					$out[ $key ] = $val;
+				}
+				continue;
+			}
+			if ( is_string( $val ) && '' === trim( $val ) ) {
+				continue;
+			}
+			if ( null !== $val && false !== $val && '' !== $val ) {
+				$out[ $key ] = $val;
+			}
+		}
+	}
+	return $out;
+}
+
+/**
+ * Default media quotes for slider.
  *
  * @return array
  */
 function goldenbee_default_media_quotes() {
+	$base = goldenbee_media_asset_base();
 	return array(
 		array(
 			'quote_source' => 'Báo xây dựng',
-			'quote_text'   => __( 'Vật liệu xây dựng xanh, thân thiện môi trường cho điều kiện khí hậu Việt Nam.', 'goldenbee' ),
+			'quote_text'   => __( 'Trong những năm gần đây, nhu cầu tìm kiếm vật liệu xây dựng “xanh”, thân thiện với môi trường và giảm thiểu tối đa chi phí đang được rất nhiều nhà đầu tư để ý. Để đáp ứng điều kiện khí hậu khắc nghiệt của Việt Nam, sản phẩm tôn ngói nhựa xanh Green BM ra đời nhằm phục vụ khách hàng có nhu cầu lợp mái nhà dân dụng hoặc các nhà máy ở khu công nghiệp.', 'goldenbee' ),
+			'quote_logo'   => array( 'url' => $base . '/logo-bao-xay-dung.png' ),
 		),
 		array(
 			'quote_source' => 'HTV tin tức',
-			'quote_text'   => __( 'Biến nhựa thành vật liệu xây dựng bền vững với công nghệ tiên tiến.', 'goldenbee' ),
+			'quote_text'   => __( 'Với tầm nhìn và định hướng trở thành nhà cung cấp Vật liệu xây dựng XANH hàng đầu ở Việt Nam trong 10 năm tới. Công ty Tôn Ngói Nhựa Xanh (GREEN BM) có bước tiến là biến nhựa thành vật liệu xây dựng bền vững vì trong nhựa hội tụ đầy đủ đặc tính chắc, bền, chống nước, nhẹ, dễ đúc khuôn, và tái chế được.', 'goldenbee' ),
+			'quote_logo'   => array( 'url' => $base . '/htv-tin-tuc.png' ),
 		),
 		array(
 			'quote_source' => 'Nhịp Sống Khỏe',
-			'quote_text'   => __( 'Góp phần bảo vệ môi trường sạch – đẹp, giảm ô nhiễm.', 'goldenbee' ),
+			'quote_text'   => __( 'Công ty CP Đầu Tư Xuất Nhập Khẩu Vật Liệu Xanh tự hào, góp phần để lại cho những thế hệ tiếp theo một hành tinh sạch sẽ hơn, bền vững hơn. Nhằm đưa ra những giải pháp để hình thành một nền kinh tế tuần hoàn. Góp phần bảo vệ môi trường thêm sạch – đẹp, giảm ô nhiễm.', 'goldenbee' ),
+			'quote_logo'   => array( 'url' => $base . '/nhip-song-khoe.png' ),
 		),
 		array(
 			'quote_source' => 'Nhịp Sống Kinh Doanh',
-			'quote_text'   => __( 'Định hướng vật liệu xây dựng chính hãng, bảo vệ môi trường.', 'goldenbee' ),
+			'quote_text'   => __( 'Với tiêu chí phát triển bền vững công ty Tôn Ngói Nhựa Xanh (GREEN BM) với định hướng chiến lược tập trung kinh doanh trong lĩnh vực vật liệu xây dựng chính hãng, sản xuất bằng công nghệ tiên tiến và bảo vệ môi trường. Hiện nay công ty đã cho ra đời sản phẩm tôn Ngói nhựa mang thương hiệu GreenBM.', 'goldenbee' ),
+			'quote_logo'   => array( 'url' => $base . '/nhip-song-kinh-doanh.png' ),
+		),
+		array(
+			'quote_source' => 'Nhịp Sống Khỏe',
+			'quote_text'   => __( 'Công ty CP Đầu Tư Xuất Nhập Khẩu Vật Liệu Xanh tự hào, góp phần để lại cho những thế hệ tiếp theo một hành tinh sạch sẽ hơn, bền vững hơn.', 'goldenbee' ),
+			'quote_logo'   => array( 'url' => $base . '/nhip-song-khoe.png' ),
+		),
+		array(
+			'quote_source' => 'HTV tin tức',
+			'quote_text'   => __( 'Với tầm nhìn và định hướng trở thành nhà cung cấp Vật liệu xây dựng XANH hàng đầu ở Việt Nam trong 10 năm tới, công ty Tôn Ngói Nhựa Xanh (GREEN BM) có bước tiến là biến nhựa thành vật liệu xây dựng bền vững.', 'goldenbee' ),
+			'quote_logo'   => array( 'url' => $base . '/htv-tin-tuc.png' ),
 		),
 	);
+}
+
+/**
+ * Quotes for media slider (ACF or defaults).
+ *
+ * @return array
+ */
+function goldenbee_get_media_quotes_for_display() {
+	$defaults = goldenbee_default_media_quotes();
+	$quotes   = array();
+	$keys     = array( 'quote_logo', 'quote_source', 'quote_text' );
+
+	for ( $i = 1; $i <= 6; $i++ ) {
+		$default = $defaults[ $i - 1 ] ?? array();
+		$acf     = goldenbee_get_option_field( 'quote_' . $i, null );
+		$merged  = goldenbee_merge_media_group( $acf, $default, $keys );
+		if ( ! empty( $merged['quote_text'] ) ) {
+			$quotes[] = $merged;
+		}
+	}
+
+	return $quotes;
+}
+
+/**
+ * Press items for media section.
+ *
+ * @return array
+ */
+function goldenbee_get_media_press_items() {
+	$defaults = goldenbee_default_media_press_items();
+	$items    = array();
+	$keys     = array( 'press_image', 'press_title', 'press_excerpt', 'press_source', 'press_link' );
+
+	for ( $i = 1; $i <= 2; $i++ ) {
+		$default = $defaults[ $i - 1 ] ?? array();
+		$acf     = goldenbee_get_option_field( 'press_' . $i, null );
+		$merged  = goldenbee_merge_media_group( $acf, $default, $keys );
+		if ( ! empty( $merged['press_title'] ) ) {
+			$items[] = $merged;
+		}
+	}
+
+	return $items;
+}
+
+/**
+ * Default press items.
+ *
+ * @return array
+ */
+function goldenbee_default_media_press_items() {
+	$base = goldenbee_media_asset_base();
+	return array(
+		array(
+			'press_title'   => __( 'Hội Doanh Nghiệp Thái Bình MN Thăm Nhà Máy Vật Liệu Xanh', 'goldenbee' ),
+			'press_excerpt' => __( 'Sáng 26 tháng 8 năm 2023, Hội Doanh nhân Thái Bình miền Nam đã tới thăm và làm việc tại nhà máy sản xuất tôn, ngói nhựa – Công ty CPĐT XNK Vật Liệu Xanh của Doanh nhân Giang Công Nục. Tại buổi làm việc, Doanh nhân Giang Công Nục đã trực tiếp hướng dẫn đoàn đi thăm toàn bộ quy trình sản xuất và vận hành của nhà máy.', 'goldenbee' ),
+			'press_source'  => __( 'Doanh nhân Thái Bình', 'goldenbee' ),
+			'press_link'    => '',
+			'press_image'   => array( 'url' => $base . '/hoi-doanh-nghiep-thai-binh.jpg' ),
+		),
+		array(
+			'press_title'   => __( 'Hội viên Giang Công Nục tặng quà Đoàn Boxing trẻ Thái Bình', 'goldenbee' ),
+			'press_excerpt' => __( 'Hội viên, Hội Doanh nhân Thái Bình miền Nam Giang Công Nục – Giám đốc CÔNG TY CP ĐT XNK VẬT LIỆU XANH đã trao 6 phần quà. Mỗi phần quà trị giá 2 triệu đồng tới các Vận Động Viên Boxing trẻ Thái Bình góp mặt trong 6 trận tranh HCV tại giải Boxing trẻ toàn Quốc năm 2023 tại TPHCM.', 'goldenbee' ),
+			'press_source'  => __( 'Doanh nhân Thái Bình', 'goldenbee' ),
+			'press_link'    => '',
+			'press_image'   => array( 'url' => $base . '/boxing-thai-binh.jpg' ),
+		),
+	);
+}
+
+/**
+ * URL from ACF image field (array or attachment ID).
+ *
+ * @param mixed $field Image field value.
+ * @return string
+ */
+function goldenbee_acf_image_url( $field ) {
+	if ( is_array( $field ) && ! empty( $field['url'] ) ) {
+		return $field['url'];
+	}
+	if ( is_numeric( $field ) ) {
+		$url = wp_get_attachment_image_url( (int) $field, 'medium' );
+		return $url ? $url : '';
+	}
+	return '';
+}
+
+/**
+ * Media video embed HTML.
+ *
+ * @return string
+ */
+function goldenbee_get_media_video_embed() {
+	$url = goldenbee_get_option_field( 'media_video_url', 'https://www.youtube.com/watch?v=4v6ZrRwVxBo' );
+	if ( ! $url ) {
+		return '';
+	}
+	$embed = wp_oembed_get( $url, array( 'width' => 640 ) );
+	if ( $embed ) {
+		return $embed;
+	}
+	$video_id = '';
+	if ( preg_match( '/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/', $url, $m ) ) {
+		$video_id = $m[1];
+	}
+	if ( $video_id ) {
+		return '<iframe width="100%" height="315" src="https://www.youtube.com/embed/' . esc_attr( $video_id ) . '" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+	}
+	return '';
 }
 
 function goldenbee_color_labels() {

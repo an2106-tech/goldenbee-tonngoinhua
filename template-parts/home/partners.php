@@ -1,56 +1,52 @@
 <?php
 /**
- * Partners strip (ACF free – partner_1..6 groups).
+ * Clients section (Khách hàng của chúng tôi).
  *
  * @package GoldenBee
  */
 
-$title    = goldenbee_get_option_field( 'partners_title', __( 'Đối tác và khách hàng', 'goldenbee' ) );
-$partners = array();
+$title   = goldenbee_get_option_field( 'partners_title', __( 'Khách hàng của chúng tôi', 'goldenbee' ) );
+$clients = array();
 
-for ( $i = 1; $i <= 6; $i++ ) {
-	$group = goldenbee_get_option_field( 'partner_' . $i, null );
-	if ( is_array( $group ) && ! empty( $group['partner_logo']['url'] ) ) {
-		$partners[] = $group;
+for ( $i = 1; $i <= 4; $i++ ) {
+	$group = goldenbee_get_option_field( 'client_' . $i, null );
+	if ( is_array( $group ) && ! empty( $group['client_image']['url'] ) ) {
+		$clients[] = $group;
 	}
 }
+
+if ( empty( $clients ) ) {
+	return;
+}
 ?>
-<section class="py-10">
+<section class="py-10 bg-white">
 	<div class="container-site text-center">
-		<div class="section-title-container mb-8">
-			<h2 class="section-title section-title-center">
-				<b></b>
-				<span class="section-title-main"><?php echo esc_html( $title ); ?></span>
-				<b></b>
-			</h2>
+		<div class="partners-section-title">
+			<h2 class="section-title-main"><?php echo esc_html( $title ); ?></h2>
 		</div>
-		<?php if ( ! empty( $partners ) ) : ?>
-			<div class="flex flex-wrap items-center justify-center gap-8">
-				<?php foreach ( $partners as $partner ) : ?>
-					<?php
-					$logo = $partner['partner_logo'];
-					$url  = $logo['url'] ?? '';
-					$alt  = $partner['partner_name'] ?? ( $logo['alt'] ?? '' );
-					$link = $partner['partner_url'] ?? '';
-					?>
+		
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mt-8">
+			<?php foreach ( $clients as $client ) : ?>
+				<?php
+				$image = $client['client_image'];
+				$url   = $image['url'] ?? '';
+				$alt   = $client['client_name'] ?? ( $image['alt'] ?? '' );
+				$link  = $client['client_url'] ?? '';
+				?>
+				<div class="client-item overflow-hidden shadow-sm hover:shadow-md transition duration-200">
 					<?php if ( $link ) : ?>
-						<a href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer" class="opacity-80 transition hover:opacity-100">
-							<img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" class="h-12 max-w-[140px] object-contain" loading="lazy">
+						<a href="<?php echo esc_url( $link ); ?>" class="block group">
+							<div class="aspect-[4/3] w-full overflow-hidden">
+								<img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+							</div>
 						</a>
 					<?php else : ?>
-						<img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" class="h-12 max-w-[140px] object-contain opacity-80" loading="lazy">
+						<div class="aspect-[4/3] w-full overflow-hidden">
+							<img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>" class="w-full h-full object-cover" loading="lazy">
+						</div>
 					<?php endif; ?>
-				<?php endforeach; ?>
-			</div>
-		<?php else : ?>
-			<p class="mb-4 text-sm text-gray-500">
-				<?php esc_html_e( 'Tab Đối tác → Đối tác 1…6 → upload Logo.', 'goldenbee' ); ?>
-			</p>
-			<div class="flex flex-wrap items-center justify-center gap-8 opacity-60">
-				<?php for ( $i = 0; $i < 6; $i++ ) : ?>
-					<div class="h-12 w-28 rounded bg-gray-200"></div>
-				<?php endfor; ?>
-			</div>
-		<?php endif; ?>
+				</div>
+			<?php endforeach; ?>
+		</div>
 	</div>
 </section>

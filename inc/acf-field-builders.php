@@ -120,7 +120,7 @@ function goldenbee_acf_event_fields() {
 }
 
 /**
- * Media quotes (4 slots).
+ * Media section – quotes slider, press items, video (ACF free).
  *
  * @return array
  */
@@ -133,9 +133,16 @@ function goldenbee_acf_media_fields() {
 			'type'          => 'text',
 			'default_value' => 'Truyền thông nói về chúng tôi',
 		),
+		array(
+			'key'     => 'field_gb_media_quote_help',
+			'label'   => '',
+			'name'    => '',
+			'type'    => 'message',
+			'message' => __( 'Slider trích dẫn báo chí (tối đa 6). Upload logo tròn cho từng nguồn.', 'goldenbee' ),
+		),
 	);
 
-	for ( $i = 1; $i <= 4; $i++ ) {
+	for ( $i = 1; $i <= 6; $i++ ) {
 		$fields[] = array(
 			'key'        => 'field_gb_quote' . $i,
 			'label'      => sprintf( __( 'Trích dẫn %d', 'goldenbee' ), $i ),
@@ -143,22 +150,84 @@ function goldenbee_acf_media_fields() {
 			'type'       => 'group',
 			'layout'     => 'row',
 			'sub_fields' => array(
+				goldenbee_acf_image_field( 'field_gb_q' . $i, 'quote_logo', __( 'Logo báo', 'goldenbee' ) ),
 				array(
 					'key'   => 'field_gb_quote' . $i . '_src',
-					'label' => __( 'Nguồn', 'goldenbee' ),
+					'label' => __( 'Tên nguồn', 'goldenbee' ),
 					'name'  => 'quote_source',
 					'type'  => 'text',
 				),
 				array(
 					'key'   => 'field_gb_quote' . $i . '_txt',
-					'label' => __( 'Nội dung', 'goldenbee' ),
+					'label' => __( 'Nội dung trích dẫn', 'goldenbee' ),
 					'name'  => 'quote_text',
 					'type'  => 'textarea',
-					'rows'  => 2,
+					'rows'  => 3,
 				),
 			),
 		);
 	}
+
+	$fields[] = array(
+		'key'     => 'field_gb_media_press_help',
+		'label'   => '',
+		'name'    => '',
+		'type'    => 'message',
+		'message' => __( 'Tin báo (2 mục) – hiển thị cột trái dưới slider.', 'goldenbee' ),
+	);
+
+	for ( $i = 1; $i <= 2; $i++ ) {
+		$fields[] = array(
+			'key'        => 'field_gb_press' . $i,
+			'label'      => sprintf( __( 'Tin báo %d', 'goldenbee' ), $i ),
+			'name'       => 'press_' . $i,
+			'type'       => 'group',
+			'layout'     => 'row',
+			'sub_fields' => array(
+				goldenbee_acf_image_field( 'field_gb_pr' . $i, 'press_image', __( 'Ảnh', 'goldenbee' ) ),
+				array(
+					'key'   => 'field_gb_press' . $i . '_title',
+					'label' => __( 'Tiêu đề', 'goldenbee' ),
+					'name'  => 'press_title',
+					'type'  => 'text',
+				),
+				array(
+					'key'   => 'field_gb_press' . $i . '_excerpt',
+					'label' => __( 'Mô tả ngắn', 'goldenbee' ),
+					'name'  => 'press_excerpt',
+					'type'  => 'textarea',
+					'rows'  => 3,
+				),
+				array(
+					'key'   => 'field_gb_press' . $i . '_source',
+					'label' => __( 'Nguồn (in nghiêng)', 'goldenbee' ),
+					'name'  => 'press_source',
+					'type'  => 'text',
+				),
+				array(
+					'key'   => 'field_gb_press' . $i . '_link',
+					'label' => __( 'Link bài viết', 'goldenbee' ),
+					'name'  => 'press_link',
+					'type'  => 'url',
+				),
+			),
+		);
+	}
+
+	$fields[] = array(
+		'key'           => 'field_gb_media_video_url',
+		'label'         => __( 'URL video YouTube', 'goldenbee' ),
+		'name'          => 'media_video_url',
+		'type'          => 'url',
+		'default_value' => 'https://www.youtube.com/watch?v=4v6ZrRwVxBo',
+	);
+	$fields[] = array(
+		'key'           => 'field_gb_media_video_caption',
+		'label'         => __( 'Chú thích video', 'goldenbee' ),
+		'name'          => 'media_video_caption',
+		'type'          => 'text',
+		'default_value' => 'Tôn ngói nhựa xanh Green BM lên sóng HTV9 Chương trình nhịp sống kinh doanh',
+	);
 
 	return $fields;
 }
@@ -175,29 +244,29 @@ function goldenbee_acf_partner_fields() {
 			'label'         => __( 'Tiêu đề section', 'goldenbee' ),
 			'name'          => 'partners_title',
 			'type'          => 'text',
-			'default_value' => 'Đối tác và khách hàng',
+			'default_value' => 'Khách hàng của chúng tôi',
 		),
 	);
 
-	for ( $i = 1; $i <= 6; $i++ ) {
+	for ( $i = 1; $i <= 4; $i++ ) {
 		$fields[] = array(
-			'key'        => 'field_gb_partner' . $i,
-			'label'      => sprintf( __( 'Đối tác %d', 'goldenbee' ), $i ),
-			'name'       => 'partner_' . $i,
+			'key'        => 'field_gb_client' . $i,
+			'label'      => sprintf( __( 'Khách hàng %d', 'goldenbee' ), $i ),
+			'name'       => 'client_' . $i,
 			'type'       => 'group',
 			'layout'     => 'row',
 			'sub_fields' => array(
-				goldenbee_acf_image_field( 'field_gb_ptr' . $i, 'partner_logo', __( 'Logo', 'goldenbee' ) ),
+				goldenbee_acf_image_field( 'field_gb_cli' . $i, 'client_image', __( 'Hình ảnh', 'goldenbee' ) ),
 				array(
-					'key'   => 'field_gb_ptr' . $i . '_name',
-					'label' => __( 'Tên (alt)', 'goldenbee' ),
-					'name'  => 'partner_name',
+					'key'   => 'field_gb_cli' . $i . '_name',
+					'label' => __( 'Tên công trình (alt)', 'goldenbee' ),
+					'name'  => 'client_name',
 					'type'  => 'text',
 				),
 				array(
-					'key'   => 'field_gb_ptr' . $i . '_url',
-					'label' => __( 'Link', 'goldenbee' ),
-					'name'  => 'partner_url',
+					'key'   => 'field_gb_cli' . $i . '_url',
+					'label' => __( 'Link liên kết', 'goldenbee' ),
+					'name'  => 'client_url',
 					'type'  => 'url',
 				),
 			),

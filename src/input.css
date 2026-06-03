@@ -182,7 +182,7 @@
   }
 
   .section-title-footer .section-title-main {
-    @apply text-[18px] normal-case text-white;
+    @apply text-[18px] uppercase text-white;
   }
 
   .section-title-footer .section-title {
@@ -306,12 +306,31 @@
     @apply text-white no-underline hover:underline;
   }
 
-  .footer-newsletter input {
-    @apply min-h-[50px] w-full rounded-[5px] border border-white/30 bg-transparent px-3 text-white placeholder:text-white/70 focus:outline-none;
+  .formFooter {
+    @apply flex flex-col gap-2.5 w-full mt-2;
   }
 
-  .footer-newsletter button {
-    @apply mt-2 w-full rounded-[5px] bg-white py-2 text-brand hover:bg-gray-100;
+  .formFooter .wpcf7-form-control-wrap {
+    @apply w-full;
+  }
+
+  .formFooter input {
+    @apply h-[42px] w-full px-3 bg-transparent border border-white/30 rounded text-white placeholder-white/50 focus:outline-none text-[14px] font-bold !important;
+  }
+
+  .formFooter input::placeholder {
+    @apply font-bold text-white/50 !important;
+  }
+
+  .formFooter .btn-Footer {
+    @apply h-[42px] w-full bg-white rounded flex items-center justify-center shrink-0 border-0 cursor-pointer transition duration-150 hover:bg-gray-100 !important;
+    background-image: none !important;
+    position: relative;
+  }
+
+  .formFooter .btn-Footer::after {
+    content: 'ĐĂNG KÝ' !important;
+    @apply text-[#003481] text-[14px] font-bold uppercase;
   }
 
   .absolute-footer {
@@ -374,6 +393,174 @@
 
   .back-to-top {
     @apply fixed bottom-6 right-6 z-40 hidden h-10 w-10 items-center justify-center rounded-full border-2 border-brand bg-white text-brand shadow-md hover:bg-brand hover:text-white md:flex;
+  }
+
+  /* Truyền thông nói về chúng tôi – secFeedback */
+  .sec-feedback {
+    @apply py-10 md:py-14;
+    background-color: #229b4c;
+  }
+
+  .sec-feedback .section-title-main {
+    @apply text-white;
+  }
+
+  .sec-feedback .section-title b {
+    @apply hidden;
+  }
+
+  .media-quotes-slider {
+    @apply relative mb-10;
+  }
+
+  .media-quotes-viewport {
+    @apply overflow-hidden px-10 md:px-12;
+  }
+
+  .media-quotes-track {
+    @apply flex transition-transform duration-500 ease-out;
+    will-change: transform;
+  }
+
+  .media-quote-slide {
+    @apply shrink-0 px-2;
+    flex: 0 0 100%;
+  }
+
+  @screen md {
+    .media-quote-slide {
+      flex: 0 0 50%;
+    }
+  }
+
+  @screen lg {
+    .media-quote-slide {
+      flex: 0 0 33.333%;
+    }
+  }
+
+  .media-quote-card {
+    @apply flex h-full flex-col items-center bg-transparent p-0 text-center shadow-none border-0;
+  }
+
+  .media-quote-logo {
+    @apply mb-4 h-[100px] w-[100px] shrink-0 overflow-hidden rounded-full border-0 bg-transparent;
+  }
+
+  .media-quote-logo img {
+    @apply block h-full w-full rounded-full object-cover;
+  }
+
+  .media-quote-text {
+    @apply m-0 flex-1;
+  }
+
+  .media-quote-text p {
+    @apply mb-0 text-[15px] leading-snug text-white;
+  }
+
+  .media-quote-source {
+    @apply mt-3 mb-0 text-[16px] font-bold text-white text-center;
+    text-transform: none;
+  }
+
+  .media-slider-btn {
+    @apply hidden;
+  }
+
+  .media-slider-prev {
+    @apply left-0;
+  }
+
+  .media-slider-next {
+    @apply right-0;
+  }
+
+  .media-slider-dots {
+    @apply mt-4 flex justify-center gap-2;
+  }
+
+  .media-slider-dot {
+    @apply h-2.5 w-2.5 cursor-pointer rounded-full border-0 bg-white/50 p-0 transition;
+  }
+
+  .media-slider-dot.is-active {
+    @apply bg-white;
+  }
+
+  .media-bottom {
+    @apply grid gap-8 lg:grid-cols-2 lg:gap-10;
+  }
+
+  .media-press-col {
+    @apply flex flex-col gap-6;
+  }
+
+  .media-press-item {
+    @apply flex gap-5 bg-transparent p-0 no-underline shadow-none;
+    margin-bottom: 2rem;
+  }
+
+  .media-press-item:hover {
+    @apply shadow-none;
+  }
+
+  .media-press-thumb {
+    @apply shrink-0 overflow-hidden rounded;
+  }
+
+  .media-press-thumb img {
+    @apply h-[110px] w-[150px] object-cover rounded;
+  }
+
+  .media-press-title {
+    @apply mb-2 text-lg font-bold leading-snug text-white;
+  }
+
+  .media-press-excerpt {
+    @apply mb-2 text-[15px] leading-snug text-white;
+  }
+
+  .media-press-source {
+    @apply mb-0 text-[14px] text-white font-bold text-right block w-full;
+  }
+
+  .media-press-source em::before {
+    content: '“';
+  }
+
+  .media-press-source em::after {
+    content: '”';
+  }
+
+  .media-video-wrap {
+    @apply overflow-hidden rounded-lg bg-black shadow-lg;
+  }
+
+  .media-video-wrap iframe {
+    @apply aspect-video h-auto w-full;
+  }
+
+  .media-video-caption {
+    @apply mt-6 text-center text-[22px] font-bold text-white leading-normal;
+  }
+
+  /* Khách hàng của chúng tôi */
+  .partners-section-title {
+    @apply flex flex-col items-center justify-center mb-8;
+  }
+
+  .partners-section-title .section-title-main {
+    @apply mb-3 tracking-wide;
+  }
+
+  .partners-section-title::after {
+    content: '';
+    @apply block w-[150px] h-[3px] bg-brand;
+  }
+
+  .client-item {
+    @apply rounded-none shadow-none;
   }
 }
 
