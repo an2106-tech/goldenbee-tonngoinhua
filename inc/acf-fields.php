@@ -86,9 +86,11 @@ function goldenbee_register_acf_field_groups() {
 				'name'  => 'intro_button_url',
 				'type'  => 'url',
 			),
+		),
+		array(
 			array(
 				'key'   => 'field_gb_tab_events',
-				'label' => __( 'Hình sự kiện', 'goldenbee' ),
+				'label' => __( 'Hình ảnh sự kiện', 'goldenbee' ),
 				'name'  => '',
 				'type'  => 'tab',
 			),

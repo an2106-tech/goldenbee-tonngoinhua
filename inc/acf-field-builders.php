@@ -19,9 +19,11 @@ function goldenbee_acf_image_field( $key_prefix, $name, $label ) {
 		'label'         => $label,
 		'name'          => $name,
 		'type'          => 'image',
+		'instructions'  => __( 'Chọn hoặc upload ảnh sự kiện có chất lượng rõ nét để hiển thị đúng khung hình.', 'goldenbee' ),
 		'return_format' => 'array',
 		'preview_size'  => 'medium',
 		'library'       => 'all',
+		'mime_types'    => 'jpg,jpeg,png,webp',
 	);
 }
 
@@ -90,7 +92,7 @@ function goldenbee_acf_banner_fields() {
 }
 
 /**
- * Event images (6 slots).
+ * Event images (40 slots).
  *
  * @return array
  */
@@ -101,6 +103,7 @@ function goldenbee_acf_event_fields() {
 			'label'         => __( 'Tiêu đề section', 'goldenbee' ),
 			'name'          => 'events_title',
 			'type'          => 'text',
+			'instructions'  => __( 'Đặt tiêu đề giống theo bố cục ảnh tham chiếu.', 'goldenbee' ),
 			'default_value' => 'Hình ảnh Green BM tại các sự kiện',
 		),
 		array(
@@ -108,12 +111,12 @@ function goldenbee_acf_event_fields() {
 			'label'   => '',
 			'name'    => '',
 			'type'    => 'message',
-			'message' => __( 'Upload tối đa 6 ảnh (ảnh 1 → ảnh 6).', 'goldenbee' ),
+			'message' => __( 'Upload từ 4 đến 40 ảnh sự kiện để tạo khung hình đẹp và đồng bộ với section trên trang chủ.', 'goldenbee' ),
 		),
 	);
 
-	for ( $i = 1; $i <= 6; $i++ ) {
-		$fields[] = goldenbee_acf_image_field( 'field_gb_evt', 'event_image_' . $i, sprintf( __( 'Ảnh %d', 'goldenbee' ), $i ) );
+	for ( $i = 1; $i <= 40; $i++ ) {
+		$fields[] = goldenbee_acf_image_field( 'field_gb_evt', 'event_image_' . $i, sprintf( __( 'Ảnh sự kiện %d', 'goldenbee' ), $i ) );
 	}
 
 	return $fields;
