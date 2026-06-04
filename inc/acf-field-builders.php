@@ -236,6 +236,59 @@ function goldenbee_acf_media_fields() {
 }
 
 /**
+ * Video công trình section.
+ *
+ * @return array
+ */
+function goldenbee_acf_project_video_fields() {
+	$fields = array(
+		array(
+			'key'           => 'field_gb_project_videos_title',
+			'label'         => __( 'Tiêu đề section', 'goldenbee' ),
+			'name'          => 'project_videos_title',
+			'type'          => 'text',
+			'default_value' => 'Video các công trình sử dụng tôn ngói nhựa Green BM',
+		),
+		array(
+			'key'     => 'field_gb_project_videos_help',
+			'label'   => '',
+			'name'    => '',
+			'type'    => 'message',
+			'message' => __( 'Upload tối đa 6 ảnh thumbnail, mỗi ảnh gắn 1 link video YouTube/Vimeo để mở trong lightbox.', 'goldenbee' ),
+		),
+	);
+
+	for ( $i = 1; $i <= 6; $i++ ) {
+		$fields[] = array(
+			'key'        => 'field_gb_project_video' . $i,
+			'label'      => sprintf( __( 'Video công trình %d', 'goldenbee' ), $i ),
+			'name'       => 'project_video_' . $i,
+			'type'       => 'group',
+			'layout'     => 'row',
+			'sub_fields' => array(
+				goldenbee_acf_image_field( 'field_gb_pv' . $i, 'project_video_image', __( 'Ảnh thumbnail', 'goldenbee' ) ),
+				array(
+					'key'           => 'field_gb_project_video' . $i . '_url',
+					'label'         => __( 'Link video', 'goldenbee' ),
+					'name'          => 'project_video_url',
+					'type'          => 'url',
+					'instructions'  => __( 'Dán link YouTube hoặc video khác có thể nhúng.', 'goldenbee' ),
+				),
+				array(
+					'key'           => 'field_gb_project_video' . $i . '_title',
+					'label'         => __( 'Tiêu đề video', 'goldenbee' ),
+					'name'          => 'project_video_title',
+					'type'          => 'text',
+					'default_value' => sprintf( __( 'Công trình video %d', 'goldenbee' ), $i ),
+				),
+			),
+		);
+	}
+
+	return $fields;
+}
+
+/**
  * Partner logos (6 slots).
  *
  * @return array

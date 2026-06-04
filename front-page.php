@@ -16,6 +16,7 @@ get_header();
 	get_template_part( 'template-parts/home/projects' );
 	get_template_part( 'template-parts/home/events' );
 	get_template_part( 'template-parts/home/media' );
+	get_template_part( 'template-parts/home/video', 'projects' );
 	get_template_part( 'template-parts/home/news' );
 	get_template_part( 'template-parts/home/partners' );
 	?>

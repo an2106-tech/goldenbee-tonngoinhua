@@ -13,9 +13,28 @@ $video_embed = goldenbee_get_youtube_embed_url( $video_url );
 if ( ! $video_embed ) {
 	return;
 }
-$video_slider_shortcode = goldenbee_get_option_field( 'intro_slider_shortcode', '' );
-if ( ! $video_slider_shortcode ) {
-	$video_slider_shortcode = goldenbee_get_option_field( 'intro_video_slider_shortcode', '[smartslider3 slider="3"]' );
+$video_slider_shortcodes = array_filter(
+	array_map(
+		'trim',
+		array(
+			(string) goldenbee_get_option_field( 'intro_slider_shortcode', '' ),
+			(string) goldenbee_get_option_field( 'intro_video_slider_shortcode', '' ),
+			'[smartslider3 slider="3"]',
+		)
+	)
+);
+
+$video_slider_html = '';
+foreach ( $video_slider_shortcodes as $video_slider_shortcode ) {
+	$rendered_slider = do_shortcode( $video_slider_shortcode );
+	if ( '' === trim( wp_strip_all_tags( $rendered_slider ) ) && false === strpos( $rendered_slider, '<' ) ) {
+		continue;
+	}
+	if ( trim( $rendered_slider ) === $video_slider_shortcode ) {
+		continue;
+	}
+	$video_slider_html = $rendered_slider;
+	break;
 }
 ?>
 <section class="py-2 md:py-4 bg-white">
@@ -28,10 +47,10 @@ if ( ! $video_slider_shortcode ) {
 	</div>
 </section>
 
-<?php if ( $video_slider_shortcode ) : ?>
+<?php if ( $video_slider_html ) : ?>
 	<section class="pt-16 pb-8 bg-white">
 		<div class="mx-auto w-full max-w-full px-0">
-			<?php echo do_shortcode( wp_kses_post( $video_slider_shortcode ) ); ?>
+			<?php echo $video_slider_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</div>
 	</section>
 <?php endif; ?>

@@ -145,6 +145,15 @@ function goldenbee_register_acf_field_groups() {
 		goldenbee_acf_media_fields(),
 		array(
 			array(
+				'key'   => 'field_gb_tab_project_videos',
+				'label' => __( 'Video công trình', 'goldenbee' ),
+				'name'  => '',
+				'type'  => 'tab',
+			),
+		),
+		goldenbee_acf_project_video_fields(),
+		array(
+			array(
 				'key'   => 'field_gb_tab_partners',
 				'label' => __( 'Khách hàng', 'goldenbee' ),
 				'name'  => '',
