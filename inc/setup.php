@@ -74,7 +74,14 @@ function goldenbee_enqueue_assets() {
 		'goldenbee-style',
 		get_template_directory_uri() . '/assets/style.css',
 		array( 'goldenbee-fonts' ),
-		$theme_version
+		filemtime( GOLDENBEE_DIR . '/assets/style.css' )
+	);
+
+	wp_enqueue_style(
+		'goldenbee-news-archive',
+		get_template_directory_uri() . '/assets/news-archive.css',
+		array( 'goldenbee-style' ),
+		filemtime( GOLDENBEE_DIR . '/assets/news-archive.css' )
 	);
 
 	wp_enqueue_script(

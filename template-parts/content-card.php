@@ -5,17 +5,18 @@
  * @package GoldenBee
  */
 ?>
-<article class="product-card">
-	<a href="<?php the_permalink(); ?>">
+<article class="news-card">
+	<div class="card-thumbnail">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'goldenbee-card', array( 'class' => 'aspect-video w-full object-cover' ) ); ?>
+			<?php the_post_thumbnail( 'goldenbee-card', array( 'style' => 'width:100%;height:auto;display:block;object-fit:cover;' ) ); ?>
 		<?php else : ?>
-			<div class="aspect-video bg-gray-200"></div>
+			<div class="fallback-thumbnail" style="background-color:#f4f4f4;height:220px;"></div>
 		<?php endif; ?>
-		<div class="p-4">
-			<h3 class="font-semibold text-brand line-clamp-2"><?php the_title(); ?></h3>
-			<p class="mt-1 text-sm text-gray-500"><?php echo esc_html( get_the_date() ); ?></p>
-			<span class="mt-2 inline-block text-sm font-semibold text-brand"><?php esc_html_e( 'Xem ngay →', 'goldenbee' ); ?></span>
-		</div>
-	</a>
+		<div class="card-date"><?php echo esc_html( get_the_date( 'd/m/Y' ) ); ?></div>
+	</div>
+	<div class="card-body">
+		<h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<p class="card-excerpt"><?php echo wp_kses_post( wp_trim_words( get_the_excerpt(), 24, '...' ) ); ?></p>
+		<a class="card-btn-more" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Xem ngay', 'goldenbee' ); ?></a>
+	</div>
 </article>
