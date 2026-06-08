@@ -1,14 +1,11 @@
 <?php
 /**
- * Floating contact – tonngoinhua.vn style.
+ * Floating contact matching tonngoinhua.vn layout.
  *
  * @package GoldenBee
  */
 
-$phone     = goldenbee_get_option( 'phone_secondary', '0943759119' );
-$zalo      = goldenbee_get_option( 'zalo_url', 'https://zalo.me/0943759119' );
-$messenger = goldenbee_get_option( 'messenger_url', 'https://m.me/tonngoinhua.vn/' );
-$icon_base = 'https://tonngoinhua.vn/wp-content/uploads/2023/03';
+$phone = goldenbee_get_option( 'phone_secondary', '0943759119' );
 ?>
 <div class="contact-social">
 	<div class="phoneFt contact-tus">
@@ -16,7 +13,7 @@ $icon_base = 'https://tonngoinhua.vn/wp-content/uploads/2023/03';
 			<div class="phone-vr-circle-fill"></div>
 			<div class="phone-vr-img-circle">
 				<a href="tel:<?php echo esc_attr( preg_replace( '/\D/', '', $phone ) ); ?>">
-					<img src="<?php echo esc_url( $icon_base . '/phone.png' ); ?>" alt="<?php esc_attr_e( 'Gọi điện', 'goldenbee' ); ?>">
+					<img src="https://tonngoinhua.vn/wp-content/uploads/2023/03/phone.png" alt="<?php esc_attr_e( 'Gọi điện', 'goldenbee' ); ?>">
 				</a>
 			</div>
 		</div>
@@ -27,8 +24,8 @@ $icon_base = 'https://tonngoinhua.vn/wp-content/uploads/2023/03';
 		<div class="note-social">
 			<div class="phone-vr-circle-fill"></div>
 			<div class="phone-vr-img-circle">
-				<a href="<?php echo esc_url( $zalo ); ?>" target="_blank" rel="noopener">
-					<img src="<?php echo esc_url( $icon_base . '/zalo.png' ); ?>" alt="Zalo">
+				<a href="https://zalo.me/<?php echo esc_attr( preg_replace( '/\D/', '', $phone ) ); ?>" target="_blank" rel="noopener">
+					<img src="https://tonngoinhua.vn/wp-content/uploads/2023/03/zalo.png" alt="Zalo">
 				</a>
 			</div>
 		</div>
@@ -39,11 +36,40 @@ $icon_base = 'https://tonngoinhua.vn/wp-content/uploads/2023/03';
 		<div class="note-social">
 			<div class="phone-vr-circle-fill"></div>
 			<div class="phone-vr-img-circle">
-				<a href="<?php echo esc_url( $messenger ); ?>" target="_blank" rel="noopener">
-					<img src="<?php echo esc_url( $icon_base . '/2Bu49oF.png' ); ?>" alt="Messenger">
+				<a href="https://m.me/tonngoinhua.vn/" target="_blank" rel="noopener">
+					<img src="https://tonngoinhua.vn/wp-content/uploads/2023/03/2Bu49oF.png" alt="Messenger">
 				</a>
 			</div>
 		</div>
 		<div class="contact-bar fb-bar">Messenger</div>
 	</div>
+</div>
+
+<div class="nguyenntu-contact">
+	<ul>
+		<li>
+			<a id="goidien" href="tel:<?php echo esc_attr( preg_replace( '/\D/', '', $phone ) ); ?>">
+				<img src="/wp-content/uploads/2021/08/phone-footer.png" alt="icon"><br>
+				<span><?php esc_html_e( 'Gọi điện', 'goldenbee' ); ?></span>
+			</a>
+		</li>
+		<li>
+			<a id="nhantin" href="sms:<?php echo esc_attr( preg_replace( '/\D/', '', $phone ) ); ?>">
+				<img src="/wp-content/uploads/2021/08/sms-footer.png" alt="icon"><br>
+				<span><?php esc_html_e( 'Nhắn tin', 'goldenbee' ); ?></span>
+			</a>
+		</li>
+		<li>
+			<a id="chatzalo" href="https://zalo.me/<?php echo esc_attr( preg_replace( '/\D/', '', $phone ) ); ?>">
+				<img src="/wp-content/uploads/2021/08/zalo-footer.png" alt="icon"><br>
+				<span><?php esc_html_e( 'Chat zalo', 'goldenbee' ); ?></span>
+			</a>
+		</li>
+		<li>
+			<a id="chatfb" href="https://m.me/tonngoinhua.vn/">
+				<img src="/wp-content/uploads/2021/08/messenger-footer.png" alt="icon"><br>
+				<span><?php esc_html_e( 'Chat Facebook', 'goldenbee' ); ?></span>
+			</a>
+		</li>
+	</ul>
 </div>

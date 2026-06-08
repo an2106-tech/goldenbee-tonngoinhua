@@ -1,0 +1,847 @@
+body.page-template-page-gioi-thieu-php,
+body.page-gioi-thieu {
+  background: #fff;
+}
+
+.gioi-thieu-page {
+  color: #000;
+  font-family: Roboto, Arial, system-ui, sans-serif;
+}
+
+.gioi-thieu-page__container {
+  max-width: 1180px;
+}
+
+.gioi-thieu-page__hero {
+  padding: 0;
+  background: #5f5f5f;
+}
+
+.gioi-thieu-page__hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 34vw, 650px);
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.gioi-thieu-page__section {
+  padding: 0 0 28px;
+}
+
+.gioi-thieu-page__section--intro {
+  padding: 38px 0 32px;
+  background: #626262;
+}
+
+.gioi-thieu-page__section--intro .gioi-thieu-page__container {
+  max-width: 1280px;
+}
+
+.gioi-thieu-page__section--intro .gioi-thieu-page__content--compact {
+  max-width: 1120px;
+}
+
+.gioi-thieu-page__section--intro .gioi-thieu-page__text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.gioi-thieu-page__section--intro .gioi-thieu-page__text strong:not(.gioi-thieu-page__brand) {
+  font-weight: 700;
+}
+
+.gioi-thieu-page__section--intro .gioi-thieu-page__link {
+  color: #fff;
+  font-weight: 700;
+}
+
+.gioi-thieu-page__section--purpose {
+  padding: 26px 0 28px;
+}
+
+.gioi-thieu-page__section--purpose .gioi-thieu-page__container {
+  max-width: 1280px;
+}
+
+.gioi-thieu-page__section--purpose .gioi-thieu-page__content--narrow {
+  max-width: 1220px;
+}
+
+.gioi-thieu-page__content {
+  margin: 0 auto;
+}
+
+.gioi-thieu-page__content--compact {
+  max-width: 1040px;
+}
+
+.gioi-thieu-page__content--narrow {
+  max-width: 1000px;
+}
+
+.gioi-thieu-page__title-wrap--space {
+  margin-bottom: 24px;
+}
+
+.gioi-thieu-page__section-heading {
+  margin: 0;
+  text-align: center;
+  font-family: arial, Roboto, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.gioi-thieu-page__text {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #000;
+}
+
+.gioi-thieu-page__text--intro {
+  font-size: 19.2px; /* 120% of base 16px, matching live site */
+}
+
+.gioi-thieu-page__text--large {
+  font-size: 20.8px; /* 130% of base 16px, matching live site */
+}
+
+.gioi-thieu-page__section--purpose .gioi-thieu-page__text--large {
+  margin-bottom: 44px;
+  font-size: 20.8px; /* 130% of base, matching live site */
+  line-height: 1.55;
+}
+
+.gioi-thieu-page__text--justify {
+  text-align: justify;
+  font-size: 20.8px; /* 130% of base, matching live site */
+}
+
+.gioi-thieu-page__text--center {
+  text-align: center;
+}
+
+.gioi-thieu-page__text--green {
+  color: #2ba249;
+  font-size: 20.8px; /* 130% of base, matching live site */
+}
+
+.gioi-thieu-page__brand {
+  color: #2ba249;
+  font-weight: 700;
+}
+
+.gioi-thieu-page__link {
+  color: #003481;
+  text-decoration: none;
+}
+
+.gioi-thieu-page__link:hover {
+  text-decoration: underline;
+}
+
+.gioi-thieu-page__link--strong {
+  font-weight: 700;
+}
+
+.gioi-thieu-page__eyebrow {
+  margin: 0 0 30px;
+  text-align: center;
+  font-family: arial, Roboto, sans-serif;
+  font-size: 21px; /* 105% of 20px heading base */
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2ba249;
+}
+
+.gioi-thieu-page__section-label {
+  margin: 30px auto 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.gioi-thieu-page__section--purpose .gioi-thieu-page__section-label,
+.gioi-thieu-page__section--values .gioi-thieu-page__section-label {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) auto minmax(80px, 1fr);
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  margin: 0 0 28px;
+}
+
+.gioi-thieu-page__section--purpose .gioi-thieu-page__section-label::before,
+.gioi-thieu-page__section--purpose .gioi-thieu-page__section-label::after,
+.gioi-thieu-page__section--values .gioi-thieu-page__section-label::before,
+.gioi-thieu-page__section--values .gioi-thieu-page__section-label::after {
+  content: "";
+  display: block;
+  height: 5px;
+  border-top: 2px solid #159447;
+  border-bottom: 2px solid #159447;
+}
+
+.gioi-thieu-page__section--purpose .gioi-thieu-page__section-label-text,
+.gioi-thieu-page__section--values .gioi-thieu-page__section-label-text {
+  min-width: 150px;
+  color: #003481;
+  font-family: arial, Roboto, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.gioi-thieu-page__section-label--left {
+  justify-content: flex-start;
+  margin: 0 0 10px;
+}
+
+.gioi-thieu-page__section-label-text {
+  margin: 0;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  font-family: arial, Roboto, sans-serif;
+}
+
+.gioi-thieu-page__section-label--red .gioi-thieu-page__section-label-text {
+  color: #ed1c24;
+}
+
+.gioi-thieu-page__section-label--left .gioi-thieu-page__section-label-text {
+  color: #000;
+  text-align: left;
+}
+
+.gioi-thieu-page__banner,
+.gioi-thieu-page__figure,
+.gioi-thieu-page__factory,
+.gioi-thieu-page__achievement {
+  margin: 0;
+}
+
+.gioi-thieu-page__banner {
+  margin-top: 18px;
+}
+
+.gioi-thieu-page__banner-image,
+.gioi-thieu-page__figure-image,
+.gioi-thieu-page__factory-image,
+.gioi-thieu-page__achievement-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gioi-thieu-page__values {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.gioi-thieu-page__values-item {
+  margin: 0 0 8px;
+  font-size: 20.8px; /* 130% of base, matching live site */
+  line-height: 1.65;
+}
+
+.gioi-thieu-page__blockquote {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.gioi-thieu-page__product-title {
+  margin: 0 0 12px;
+  text-align: center;
+  color: #ed1c24;
+  font-size: 24px; /* bigger, matching live site h2 */
+  font-weight: 700;
+  line-height: 1.35;
+  font-family: arial, Roboto, sans-serif;
+}
+
+.gioi-thieu-page__image-stack {
+  display: grid;
+  gap: 0;
+  margin-bottom: 12px;
+}
+
+.gioi-thieu-page__image-stack-item {
+  margin: 0;
+}
+
+.gioi-thieu-page__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gioi-thieu-page__product-subtitle {
+  margin: 8px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.gioi-thieu-page__product-subtitle-image {
+  display: block;
+  width: min(100%, 700px);
+  max-width: 340px;
+  height: auto;
+}
+
+.gioi-thieu-page__product-subtitle-text {
+  color: #ed1c24;
+  font-size: 24px; /* matching live site */
+  font-weight: 700;
+  font-family: arial, Roboto, sans-serif;
+}
+
+.gioi-thieu-page__factory {
+  max-width: 1080px;
+  margin: 14px auto 0;
+}
+
+.gioi-thieu-page__achievement {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.gioi-thieu-page__company {
+  max-width: none;
+  margin: 0 auto;
+}
+
+.gioi-thieu-page__section--company {
+  padding: 0 0 32px;
+  background: #fff;
+}
+
+.gioi-thieu-page__section--company .gioi-thieu-page__container {
+  max-width: 1362px;
+}
+
+.gioi-thieu-page__section--company .gioi-thieu-page__section-label--left {
+  margin: 0 0 16px;
+}
+
+.gioi-thieu-page__section--company .gioi-thieu-page__section-label-text {
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 1.08;
+  color: #000;
+}
+
+.gioi-thieu-page__company-title {
+  max-width: 1160px;
+  margin: 0 0 18px;
+  font-size: 29px;
+  line-height: 1.32;
+  font-weight: 700;
+  color: #000;
+  text-align: left;
+}
+
+.gioi-thieu-page__company-line {
+  margin: 0;
+  font-size: 20.8px; /* 130% of base, matching live site */
+  line-height: 1.42;
+  color: #000;
+}
+
+.gioi-thieu-page__company-line + .gioi-thieu-page__company-line {
+  margin-top: 2px;
+}
+
+.gioi-thieu-page__company-line strong {
+  font-weight: 700;
+}
+
+.gioi-thieu-page__company-line a {
+  color: #003481;
+  text-decoration: none;
+}
+
+.gioi-thieu-page__company-line a:hover {
+  text-decoration: underline;
+}
+
+.site-footer-main {
+  background: #003680;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.site-footer-main__grid {
+  display: grid;
+  gap: 32px;
+}
+
+.site-footer-main__brand {
+  text-align: center;
+}
+
+.site-footer-main__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.site-footer-main__logo-image {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-footer-main__socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.site-footer-main__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.site-footer-main__social:hover {
+  border-color: #fff;
+}
+
+.site-footer-main__social-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.site-footer-main__title-wrap {
+  margin-bottom: 15px;
+}
+
+.site-footer-main__title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+}
+
+.site-footer-main__title span {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.site-footer-main__heading {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.site-footer-main__line {
+  margin: 0 0 14px;
+  padding-left: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #fff;
+}
+
+.site-footer-main__line a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer-main__line a:hover {
+  text-decoration: underline;
+}
+
+.site-footer-main__line--address {
+  background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/adress.png') left 1px / 18px 18px no-repeat;
+}
+
+.site-footer-main__line--phone {
+  background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/phone-call.png') left 1px / 18px 18px no-repeat;
+}
+
+.site-footer-main__line--email {
+  background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/envelope.png') left 1px / 18px 18px no-repeat;
+}
+
+.site-footer-main__subheading {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.site-footer-main__subheading--spaced {
+  margin-top: 20px;
+}
+
+.site-footer-main__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer-main__list li {
+  margin: 0 0 8px;
+}
+
+.site-footer-main__list a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer-main__list a:hover {
+  text-decoration: underline;
+}
+
+.site-footer-main__facebook {
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.site-footer-main__newsletter {
+  display: grid;
+  gap: 10px;
+}
+
+.site-footer-main__newsletter-input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.site-footer-main__newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer-main__newsletter-button {
+  height: 42px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  color: #003680;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.site-footer-main__links {
+  margin-top: 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.site-footer-main__links a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-footer-main__links a:hover {
+  text-decoration: underline;
+}
+
+.absolute-footer {
+  background: #003680;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 0;
+}
+
+.absolute-footer__text {
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: #fff;
+  color: #003680;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.contact-social {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 40;
+  display: none;
+}
+
+.contact-tus {
+  position: relative;
+}
+
+.note-social {
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 70px;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.phone-vr-circle-fill {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 65px;
+  height: 65px;
+  border-radius: 999px;
+  background: rgba(230, 8, 8, 0.7);
+  animation: phone-pulse 2.3s infinite ease-in-out;
+}
+
+.phone-vr-img-circle {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #e60808;
+}
+
+.phone-vr-img-circle img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.zaloFt .phone-vr-circle-fill,
+.zaloFt .phone-vr-img-circle {
+  background: #0068ff;
+}
+
+.faceFt .phone-vr-circle-fill,
+.faceFt .phone-vr-img-circle {
+  background: #0084ff;
+}
+
+.contact-bar {
+  position: absolute;
+  left: 70px;
+  bottom: 0;
+  display: none;
+  padding: 8px 16px 7px 18px;
+  border-radius: 0 999px 999px 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.phone-bar {
+  background: rgba(230, 8, 8, 0.85);
+}
+
+.zalo-bar,
+.face-bar,
+.fb-bar {
+  background: rgba(0, 104, 255, 0.85);
+}
+
+.contact-tus:hover .contact-bar {
+  display: block;
+}
+
+.nguyenntu-contact {
+  display: none;
+}
+
+@keyframes phone-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 8, 8, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(230, 8, 8, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 8, 8, 0);
+  }
+}
+
+@media (min-width: 768px) {
+  .gioi-thieu__hero {
+    padding: 58px 0 74px;
+  }
+
+  .gioi-thieu__section {
+    padding-bottom: 34px;
+  }
+
+  .gioi-thieu__section-title-text {
+    font-size: 24px;
+  }
+
+  .gioi-thieu__product-title {
+    font-size: 24px;
+  }
+
+  .gioi-thieu__product-subtitle-text {
+    font-size: 24px;
+  }
+
+  .site-footer-main__grid {
+    grid-template-columns: 1.1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gioi-thieu__hero {
+    padding: 76px 0 92px;
+  }
+
+  .gioi-thieu__section {
+    padding-bottom: 42px;
+  }
+
+  .gioi-thieu__page-title {
+    margin-bottom: 0;
+  }
+
+  .gioi-thieu__values {
+    max-width: 980px;
+  }
+
+  .gioi-thieu__image-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .site-footer-main__brand {
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gioi-thieu-page__hero-image {
+    height: 250px;
+  }
+
+  .gioi-thieu-page__section--intro {
+    padding: 28px 0 24px;
+  }
+
+  .gioi-thieu-page__section-heading,
+  .gioi-thieu-page__eyebrow {
+    font-size: 24px;
+  }
+
+  .gioi-thieu-page__section--intro .gioi-thieu-page__text,
+  .gioi-thieu-page__section--purpose .gioi-thieu-page__text--large {
+    font-size: 16px;
+  }
+
+  .gioi-thieu-page__section--purpose .gioi-thieu-page__section-label {
+    gap: 14px;
+    grid-template-columns: minmax(36px, 1fr) auto minmax(36px, 1fr);
+  }
+
+  .gioi-thieu-page__section--purpose .gioi-thieu-page__section-label-text {
+    min-width: auto;
+    font-size: 22px;
+  }
+
+  .site-footer-main__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-social {
+    display: block;
+  }
+
+  .nguyenntu-contact {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 45;
+    width: 100%;
+    background: #fff;
+    box-shadow: 2px 1px 9px #dedede;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .nguyenntu-contact ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nguyenntu-contact li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 13.5px;
+  }
+
+  .nguyenntu-contact li img {
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+  }
+
+  .nguyenntu-contact li span {
+    color: #000;
+  }
+
+  .gioi-thieu {
+    padding-bottom: 90px;
+  }
+}

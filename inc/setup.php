@@ -92,6 +92,15 @@ function goldenbee_enqueue_assets() {
 		true
 	);
 
+	if ( is_page_template( 'page-gioi-thieu.php' ) || is_page( 'gioi-thieu' ) ) {
+		wp_enqueue_style(
+			'goldenbee-page-gioi-thieu',
+			get_template_directory_uri() . '/assets/css/page-gioi-thieu.css',
+			array( 'goldenbee-style' ),
+			$theme_version
+		);
+	}
+
 	wp_localize_script( 'goldenbee-main', 'goldenbeeData', array(
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 	) );
