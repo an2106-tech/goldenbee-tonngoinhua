@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Trang Tổng Tư Vấn Hướng Dẫn
- * Description: Hiển thị toàn bộ các trang con (Hướng dẫn thi công, thanh toán...) thuộc mục Tư vấn hướng dẫn.
+ * Description: Hiển thị toàn bộ các bài viết thuộc danh mục Tư vấn hoặc Hướng dẫn.
  *
  * @package GoldenBee
  */
@@ -23,13 +23,13 @@ get_header();
         </div>
 
         <?php
-        // KHỞI TẠO QUERY LẤY CÁC TRANG CON (HƯỚNG DẪN THI CÔNG, THANH TOÁN,...)
+        // KHỞI TẠO QUERY LẤY BÀI VIẾT THEO DANH MỤC
         $args = array(
-            'post_type'      => 'page',             // Chỉ quét trong mục Pages
-            'posts_per_page' => -1,                 // Lấy đầy đủ tất cả các trang con không giới hạn
-            'post_parent'    => get_the_ID(),       // Lấy các trang nhận trang Tư Vấn Hướng Dẫn hiện tại làm CHA
-            'orderby'        => 'menu_order',       // Sắp xếp theo thứ tự cài đặt trong Admin
-            'order'          => 'ASC',              // Thứ tự tăng dần
+            'post_type'      => 'post',                 // Đổi từ 'page' thành 'post' để lấy bài viết
+            'posts_per_page' => 12,                     // Số lượng bài viết trên mỗi trang (thay -1 bằng số cụ thể nếu muốn phân trang, hoặc giữ -1 để lấy hết)
+            'category_name'  => 'tu-van',   // ĐIỀU CHỈNH: Nhập SLUG của các danh mục vào đây (phân cách bằng dấu phẩy)
+            'orderby'        => 'date',                 // Sắp xếp bài viết theo ngày đăng
+            'order'          => 'DESC',                 // Bài viết mới nhất xếp lên đầu
         );
 
         $tv_query = new WP_Query( $args );
@@ -40,17 +40,17 @@ get_header();
                 
                 <?php while ( $tv_query->have_posts() ) : $tv_query->the_post(); ?>
                     
-                    <div class="h-auto bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between product-card rounded-md overflow-hidden">
+                    <div class="h-auto bg-white border border-gray-200 shadow-sm flex flex-col justify-between product-card rounded-md overflow-hidden">
                         
                         <div class="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
-                            <a href="<?php the_permalink(); ?>" class="block w-full h-full group">
+                            <a href="<?php the_permalink(); ?>" class="block w-full h-full">
                                 <?php if ( has_post_thumbnail() ) : ?>
-                                    <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-300' ) ); ?>
+                                    <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover' ) ); ?>
                                 <?php else : ?>
                                     <?php 
                                     $acf_image = get_field('event_image_1'); 
                                     if ( !empty($acf_image) ) : ?>
-                                        <img src="<?php echo esc_url($acf_image['url']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="<?php the_title_attribute(); ?>">
+                                        <img src="<?php echo esc_url($acf_image['url']); ?>" class="w-full h-full object-cover" alt="<?php the_title_attribute(); ?>">
                                     <?php else : ?>
                                         <div class="w-full h-full bg-gradient-to-br from-[#003481] to-[#0B4A8F] opacity-90 flex items-center justify-center text-white font-medium p-4 text-center"><?php the_title(); ?></div>
                                     <?php endif; ?>
@@ -63,7 +63,7 @@ get_header();
                         </div>
 
                         <div class="p-5 flex-1 flex flex-col justify-between items-start">
-                            <h2 class="font-bold text-[16px] text-[#0B4A8F] uppercase line-clamp-2 mb-3 leading-snug hover:text-orange-500 transition-colors">
+                            <h2 class="font-bold text-[16px] text-[#0B4A8F] uppercase line-clamp-2 mb-3 leading-snug">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
                             
@@ -71,7 +71,7 @@ get_header();
                                 <?php echo wp_strip_all_tags( get_the_excerpt() ); ?>
                             </div>
                             
-                            <a href="<?php the_permalink(); ?>" class="text-[13px] text-gray-900 font-bold px-3 py-1.5 border border-dashed border-gray-800 hover:bg-gray-50 hover:text-orange-500 hover:border-orange-500 transition-colors mt-auto">
+                            <a href="<?php the_permalink(); ?>" class="text-[13px] text-gray-900 font-bold px-3 py-1.5 border border-dashed border-gray-800 mt-auto">
                                 <?php esc_html_e( 'Xem ngay ›', 'goldenbee' ); ?>
                             </a>
                         </div>
@@ -85,7 +85,7 @@ get_header();
         <?php else : ?>
             <div class="text-center py-12">
                 <p class="text-gray-500 mb-2"><?php esc_html_e( 'Chưa có bài viết hướng dẫn nào.', 'goldenbee' ); ?></p>
-                
+            </div>
         <?php endif; wp_reset_postdata(); ?>
 
     </div>

@@ -25,6 +25,7 @@ $is_shop_active = class_exists('WooCommerce') && (
     || (function_exists('is_product_taxonomy') && is_product_taxonomy())
 );
 $is_news_active = is_home() || is_category() || is_tag() || is_singular('post') || is_page('tin-tuc');
+$is_tuvan_active = is_page('tu-van-huong-dan') || is_page('huong-dan-thi-cong') || is_page('huong-dan-thanh-toan') || is_page('huong-dan-van-chuyen') || is_page('chinh-sach-doi-tra');
 ?>
 
 <header class="w-full block clear-both font-sans box-border select-none">
@@ -144,7 +145,7 @@ $is_news_active = is_home() || is_category() || is_tag() || is_singular('post') 
                     <li class="relative group dropdown-nav-item">
 
                         <a href="<?php echo esc_url(home_url('/tu-van-huong-dan/')); ?>"
-                            class="px-[13px] py-4 flex items-center gap-1 text-[15px] font-bold text-white uppercase no-underline group-hover:bg-blue-500 transition-colors whitespace-nowrap">
+                            class="<?php echo esc_attr($nav_dropdown_link_class . ' ' . ($is_tuvan_active ? $nav_active_class : $nav_dropdown_inactive)); ?>">
                             <?php esc_html_e('TƯ VẤN/ HƯỚNG DẪN', 'goldenbee'); ?>
                             <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
