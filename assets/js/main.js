@@ -172,4 +172,41 @@
     updateLayout();
     resetAuto();
   }
+
+  // Dai Ly Form Handler
+  const daiLyForm = document.querySelector('.dai-ly-page__form');
+  if (daiLyForm) {
+    daiLyForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Đang gửi...';
+
+      const formData = new FormData(this);
+      
+      fetch(goldenbeeData.ajaxUrl, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert(data.data.message);
+          daiLyForm.reset();
+        } else {
+          alert('Lỗi: ' + data.data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Có lỗi xảy ra. Vui lòng thử lại.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      });
+    });
+  }
 })();

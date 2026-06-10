@@ -342,57 +342,69 @@
   }
 
   .contact-social {
-    @apply fixed bottom-0 left-0 z-[99999] hidden md:block;
+    @apply fixed bottom-[10px] left-0 z-[99999] flex flex-col gap-0;
   }
 
   .contact-tus {
-    @apply relative;
+    @apply relative flex items-center;
   }
 
   .note-social {
-    @apply relative bottom-[25px] left-0 block h-[70px] w-[90px] cursor-pointer;
+    @apply relative block h-[60px] w-[60px] cursor-pointer z-20 shrink-0;
   }
 
   .phone-vr-circle-fill {
-    @apply absolute left-3 top-3 h-[65px] w-[65px] rounded-full border-2 border-transparent;
-    background-color: rgba(230, 8, 8, 0.7);
-    animation: phone-pulse 2.3s infinite ease-in-out;
+    @apply absolute left-0 top-0 h-[60px] w-[60px] rounded-full border-2 border-transparent;
+    background-color: rgba(230, 31, 36, 0.5);
+    animation: phone-pulse 2s infinite ease-in-out;
   }
 
   .phone-vr-img-circle {
-    @apply absolute left-[25px] top-[25px] flex h-10 w-10 items-center justify-center rounded-full;
-    background-color: #e60808;
+    @apply absolute left-1/2 top-1/2 flex h-[44px] w-[44px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full shadow-md;
+    background-color: #e61f24;
   }
 
   .phone-vr-img-circle img {
     @apply h-[22px] w-[22px] object-contain;
+    animation: phone-shake 1.5s infinite ease-in-out;
   }
 
-  .zaloFt .phone-vr-circle-fill,
+  .zaloFt .phone-vr-circle-fill {
+    background-color: rgba(33, 150, 243, 0.5);
+  }
   .zaloFt .phone-vr-img-circle {
-    background-color: #0068ff;
+    background-color: #2196f3;
   }
 
-  .faceFt .phone-vr-circle-fill,
+  .faceFt .phone-vr-circle-fill {
+    background-color: rgba(33, 150, 243, 0.5);
+  }
   .faceFt .phone-vr-img-circle {
-    background-color: #0084ff;
+    background-color: #2196f3;
   }
 
   .contact-bar {
-    @apply absolute bottom-0 left-[70px] hidden whitespace-nowrap rounded-r-full px-4 py-1 text-[13px] font-semibold text-white;
-    background-color: rgba(230, 8, 8, 0.85);
+    @apply absolute left-[30px] top-1/2 -translate-y-1/2 whitespace-nowrap rounded-r-[20px] px-[20px] pl-[40px] py-[8px] text-[16px] font-bold text-white shadow-sm transition-all duration-300;
+    background-color: #e61f24;
+    z-index: 10;
   }
 
   .zaloFt .contact-bar {
-    background-color: rgba(0, 104, 255, 0.85);
+    background-color: #2196f3;
   }
 
   .faceFt .contact-bar {
-    background-color: rgba(0, 132, 255, 0.85);
+    background-color: #2196f3;
   }
 
-  .contact-tus:hover .contact-bar {
-    @apply block;
+  @keyframes phone-shake {
+    0% { transform: rotate(0deg) scale(1) skew(1deg); }
+    10% { transform: rotate(-25deg) scale(1) skew(1deg); }
+    20% { transform: rotate(25deg) scale(1) skew(1deg); }
+    30% { transform: rotate(-25deg) scale(1) skew(1deg); }
+    40% { transform: rotate(25deg) scale(1) skew(1deg); }
+    50% { transform: rotate(0deg) scale(1) skew(1deg); }
+    100% { transform: rotate(0deg) scale(1) skew(1deg); }
   }
 
   .back-to-top {

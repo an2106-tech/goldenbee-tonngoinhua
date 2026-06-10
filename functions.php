@@ -17,6 +17,7 @@ require GOLDENBEE_DIR . '/inc/customizer.php';
 require GOLDENBEE_DIR . '/inc/cpt-project.php';
 require GOLDENBEE_DIR . '/inc/seed-products.php';
 require GOLDENBEE_DIR . '/inc/theme-activation.php';
+require GOLDENBEE_DIR . '/inc/dai-ly-form-handler.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require GOLDENBEE_DIR . '/inc/woocommerce.php';

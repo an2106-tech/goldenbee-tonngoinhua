@@ -101,6 +101,15 @@ function goldenbee_enqueue_assets() {
 		);
 	}
 
+	if ( is_page_template( 'page-dai-ly.php' ) || is_page( 'dai-ly' ) ) {
+		wp_enqueue_style(
+			'goldenbee-page-dai-ly',
+			get_template_directory_uri() . '/assets/css/page-dai-ly.css',
+			array( 'goldenbee-style' ),
+			$theme_version
+		);
+	}
+
 	wp_localize_script( 'goldenbee-main', 'goldenbeeData', array(
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 	) );

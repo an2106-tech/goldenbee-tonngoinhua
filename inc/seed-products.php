@@ -277,7 +277,7 @@ function goldenbee_create_default_pages() {
 		'trang-chu'    => array( 'title' => 'Trang chủ', 'template' => '' ),
 		'gioi-thieu'  => array( 'title' => 'Giới thiệu', 'template' => 'page-gioi-thieu.php' ),
 		'lien-he'     => array( 'title' => 'Liên hệ', 'template' => 'page-lien-he.php' ),
-		'dai-ly'      => array( 'title' => 'Đại lý', 'template' => '' ),
+		'dai-ly'      => array( 'title' => 'Đại lý', 'template' => 'page-dai-ly.php' ),
 		'cong-trinh'  => array( 'title' => 'Công trình', 'template' => '' ),
 		'tin-tuc'     => array( 'title' => 'Tin tức', 'template' => '' ),
 	);

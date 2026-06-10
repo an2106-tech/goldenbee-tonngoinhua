@@ -175,6 +175,62 @@ function goldenbee_register_acf_field_groups() {
 		'instruction_placement' => 'label',
 		'active'                => true,
 	) );
+
+	// ACF Field Group for Dai Ly Page
+	$dai_ly_id = (int) get_option( 'dai_ly_page_id' );
+	if ( empty( $dai_ly_id ) ) {
+		$dai_ly_page = get_page_by_path( 'dai-ly' );
+		if ( $dai_ly_page ) {
+			$dai_ly_id = $dai_ly_page->ID;
+		}
+	}
+
+	if ( $dai_ly_id > 0 ) {
+		acf_add_local_field_group( array(
+			'key'                   => 'group_goldenbee_dai_ly',
+			'title'                 => __( 'Đại Lý - GREEN BM', 'goldenbee' ),
+			'fields'                => array(
+				array(
+					'key'           => 'field_dai_ly_banner_image',
+					'label'         => __( 'Banner Hình Ảnh', 'goldenbee' ),
+					'name'          => 'dai_ly_banner_image',
+					'type'          => 'image',
+					'return_format' => 'url',
+					'instructions'  => __( 'Tải hình ảnh banner cho trang Đại Lý', 'goldenbee' ),
+				),
+				array(
+					'key'   => 'field_dai_ly_tab_content',
+					'label' => __( 'Nội Dung', 'goldenbee' ),
+					'name'  => '',
+					'type'  => 'tab',
+				),
+				array(
+					'key'          => 'field_dai_ly_intro_text',
+					'label'        => __( 'Đoạn Giới Thiệu', 'goldenbee' ),
+					'name'         => 'dai_ly_intro_text',
+					'type'         => 'wysiwyg',
+					'tabs'         => 'visual',
+					'toolbar'      => 'basic',
+					'media_upload' => 0,
+				),
+			),
+			'location'              => array(
+				array(
+					array(
+						'param'    => 'page',
+						'operator' => '==',
+						'value'    => (string) $dai_ly_id,
+					),
+				),
+			),
+			'menu_order'            => 0,
+			'position'              => 'normal',
+			'style'                 => 'default',
+			'label_placement'       => 'top',
+			'instruction_placement' => 'label',
+			'active'                => true,
+		) );
+	}
 }
 
 add_filter( 'acf/settings/save_json', 'goldenbee_acf_json_save_path' );

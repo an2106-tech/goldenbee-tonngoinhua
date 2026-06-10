@@ -1,0 +1,430 @@
+/* ============================================
+   DAI LY PAGE STYLES
+   ============================================ */
+
+body.page-template-page-dai-ly-php,
+body.page-dai-ly {
+  background: #fff;
+}
+
+.dai-ly-page {
+  color: #000;
+  font-family: Roboto, Arial, system-ui, sans-serif;
+}
+
+/* Hero Banner */
+.dai-ly-page__hero {
+  padding: 0;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.dai-ly-page__hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 30vw, 500px);
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.dai-ly-page__container {
+  max-width: 1180px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.dai-ly-page__breadcrumb {
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+}
+
+.dai-ly-page__breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dai-ly-page__breadcrumb-nav a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dai-ly-page__breadcrumb-nav a:hover {
+  color: #5fd200;
+}
+
+.dai-ly-page__breadcrumb-separator {
+  margin: 0 10px;
+  color: #999;
+}
+
+.dai-ly-page__breadcrumb-current {
+  color: #666;
+  font-weight: 500;
+}
+
+/* Main Intro Section */
+.dai-ly-page__section {
+  padding: 40px 0;
+}
+
+.dai-ly-page__section--intro {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.dai-ly-page__content {
+  margin: 0 auto;
+}
+
+/* Intro Block */
+.dai-ly-page__intro-block {
+  margin-bottom: 40px;
+}
+
+.dai-ly-page__intro-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ACF WYSIWYG Content */
+.dai-ly-page__intro-block p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #333;
+}
+
+.dai-ly-page__intro-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* List Block */
+.dai-ly-page__list-block {
+  margin: 30px 0;
+}
+
+.dai-ly-page__list-item {
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.dai-ly-page__list-item-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #333;
+}
+
+.dai-ly-page__list-item-text--secondary {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.dai-ly-page__list-number {
+  color: #5fd200;
+  font-weight: 700;
+}
+
+/* Form Section */
+.dai-ly-page__section--form {
+  background: #f5f5f5;
+  padding: 60px 0;
+}
+
+.dai-ly-page__form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dai-ly-page__form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dai-ly-page__form-logo {
+  display: block;
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+.dai-ly-page__form-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #003d7a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Form Elements */
+.dai-ly-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dai-ly-page__form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.dai-ly-page__form-input,
+.dai-ly-page__form-textarea {
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fafafa;
+  font-family: inherit;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.dai-ly-page__form-input:focus,
+.dai-ly-page__form-textarea:focus {
+  outline: none;
+  border-color: #5fd200;
+  background: #fff;
+}
+
+.dai-ly-page__form-input::placeholder,
+.dai-ly-page__form-textarea::placeholder {
+  color: #999;
+}
+
+.dai-ly-page__form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.dai-ly-page__form-button {
+  padding: 14px 28px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #003d7a;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.dai-ly-page__form-button:hover {
+  background: #002a55;
+}
+
+.dai-ly-page__form-button:active {
+  background: #001f40;
+}
+
+/* Contact Form 7 Styles */
+.dai-ly-page__form-content .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dai-ly-page__form-content .wpcf7-form-control {
+  margin: 0;
+}
+
+.dai-ly-page__form-content input[type="text"],
+.dai-ly-page__form-content input[type="email"],
+.dai-ly-page__form-content input[type="tel"],
+.dai-ly-page__form-content textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fafafa;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.dai-ly-page__form-content input[type="text"]:focus,
+.dai-ly-page__form-content input[type="email"]:focus,
+.dai-ly-page__form-content input[type="tel"]:focus,
+.dai-ly-page__form-content textarea:focus {
+  outline: none;
+  border-color: #5fd200;
+  background: #fff;
+}
+
+.dai-ly-page__form-content .wpcf7-submit {
+  padding: 14px 28px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: #003d7a;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.dai-ly-page__form-content .wpcf7-submit:hover {
+  background: #002a55;
+}
+
+/* Contact Info Section */
+.dai-ly-page__section--contact-info {
+  padding: 50px 0;
+  background: #f9f9f9;
+}
+
+.dai-ly-page__contact-info {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dai-ly-page__contact-title {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #5fd200;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.dai-ly-page__contact-company {
+  margin: 0 0 25px 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.dai-ly-page__contact-detail {
+  margin: 12px 0 12px 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+.dai-ly-page__contact-detail strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.dai-ly-page__contact-detail a {
+  color: #003d7a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dai-ly-page__contact-detail a:hover {
+  color: #5fd200;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dai-ly-page__hero-image {
+    height: clamp(150px, 25vw, 350px);
+  }
+
+  .dai-ly-page__section {
+    padding: 30px 0;
+  }
+
+  .dai-ly-page__section--intro {
+    padding: 30px 0;
+  }
+
+  .dai-ly-page__section--form {
+    padding: 40px 0;
+  }
+
+  .dai-ly-page__form-wrapper {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .dai-ly-page__form-logo {
+    max-width: 100px;
+  }
+
+  .dai-ly-page__form-title {
+    font-size: 18px;
+  }
+
+  .dai-ly-page__intro-text,
+  .dai-ly-page__list-item-text {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .dai-ly-page__contact-title {
+    font-size: 20px;
+  }
+
+  .dai-ly-page__breadcrumb-nav {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dai-ly-page__container {
+    padding: 0 15px;
+  }
+
+  .dai-ly-page__hero-image {
+    height: clamp(120px, 20vw, 250px);
+  }
+
+  .dai-ly-page__section {
+    padding: 20px 0;
+  }
+
+  .dai-ly-page__form-wrapper {
+    padding: 20px 15px;
+  }
+
+  .dai-ly-page__form-title {
+    font-size: 16px;
+  }
+
+  .dai-ly-page__intro-text,
+  .dai-ly-page__list-item-text {
+    font-size: 14px;
+  }
+
+  .dai-ly-page__contact-title {
+    font-size: 18px;
+  }
+
+  .dai-ly-page__list-item {
+    margin-bottom: 18px;
+  }
+}
