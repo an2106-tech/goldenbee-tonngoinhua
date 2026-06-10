@@ -1073,6 +1073,35 @@
     background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/envelope.png') left center / 21px 21px no-repeat;
   }
 
+  .site-footer-main__line {
+    @apply mb-2 pl-[30px] text-[15px] font-semibold;
+  }
+
+  .site-footer-main__line--address {
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/adress.png') left top 3px / 21px 21px no-repeat;
+  }
+
+  .site-footer-main__line--phone {
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/phone-call.png') left top 3px / 21px 21px no-repeat;
+  }
+
+  .site-footer-main__line--email {
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/envelope.png') left top 3px / 21px 21px no-repeat;
+  }
+
+  .site-footer-main__list {
+    @apply m-0 list-none p-0;
+  }
+
+  .site-footer-main__list li {
+    @apply mb-3 pl-[25px] flex items-center;
+    background: url('https://tonngoinhua.vn/wp-content/uploads/2021/07/map-locator.png') left top 3px / 16px 16px no-repeat;
+  }
+
+  .site-footer-main__list li a {
+    @apply text-white no-underline hover:underline font-semibold text-[15px] leading-tight;
+  }
+
   .site-footer-main a {
     @apply text-white no-underline hover:underline;
   }
