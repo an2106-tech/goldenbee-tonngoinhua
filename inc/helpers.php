@@ -457,3 +457,208 @@ function goldenbee_color_labels() {
         'xanh'            => 'Xanh',
     );
 }
+
+/**
+ * Get an ACF product field with a safe fallback.
+ *
+ * @param string $name       Field name.
+ * @param int    $product_id Product ID.
+ * @param mixed  $default    Default value.
+ * @return mixed
+ */
+function goldenbee_get_product_field( $name, $product_id, $default = '' ) {
+	if ( function_exists( 'get_field' ) ) {
+		$value = get_field( $name, $product_id );
+		if ( null !== $value && false !== $value && '' !== $value ) {
+			return $value;
+		}
+	}
+
+	return $default;
+}
+
+/**
+ * Fixed ACF text slots to display as a list.
+ *
+ * @param string $prefix     Field prefix.
+ * @param int    $count      Number of slots.
+ * @param int    $product_id Product ID.
+ * @return array
+ */
+function goldenbee_get_product_text_slots( $prefix, $count, $product_id ) {
+	$items = array();
+
+	for ( $i = 1; $i <= $count; $i++ ) {
+		$value = goldenbee_get_product_field( $prefix . '_' . $i, $product_id, '' );
+		if ( is_string( $value ) && '' !== trim( $value ) ) {
+			$items[] = trim( $value );
+		}
+	}
+
+	return $items;
+}
+
+/**
+ * Fixed ACF image slots to display as a list.
+ *
+ * @param string $prefix     Field prefix.
+ * @param int    $count      Number of slots.
+ * @param int    $product_id Product ID.
+ * @return array
+ */
+function goldenbee_get_product_image_slots( $prefix, $count, $product_id ) {
+	$items = array();
+
+	for ( $i = 1; $i <= $count; $i++ ) {
+		$image = goldenbee_get_product_field( $prefix . '_' . $i, $product_id, null );
+		$url   = goldenbee_acf_image_url( $image );
+		if ( $url ) {
+			$items[] = array(
+				'url' => $url,
+				'alt' => is_array( $image ) && ! empty( $image['alt'] ) ? $image['alt'] : get_the_title( $product_id ),
+			);
+		}
+	}
+
+	return $items;
+}
+
+/**
+ * Fixed ACF group slots with required keys.
+ *
+ * @param string $prefix        Field prefix.
+ * @param int    $count         Number of slots.
+ * @param int    $product_id    Product ID.
+ * @param array  $required_keys Keys that must be filled.
+ * @return array
+ */
+function goldenbee_get_product_group_slots( $prefix, $count, $product_id, $required_keys ) {
+	$items = array();
+
+	for ( $i = 1; $i <= $count; $i++ ) {
+		$group = goldenbee_get_product_field( $prefix . '_' . $i, $product_id, array() );
+		if ( ! is_array( $group ) ) {
+			continue;
+		}
+
+		$keep = true;
+		foreach ( $required_keys as $key ) {
+			$value = isset( $group[ $key ] ) ? trim( (string) $group[ $key ] ) : '';
+			if ( '' === $value ) {
+				$keep = false;
+				break;
+			}
+			$group[ $key ] = $value;
+		}
+
+		if ( $keep ) {
+			$items[] = $group;
+		}
+	}
+
+	return $items;
+}
+
+/**
+ * Product specs from ACF and visible WooCommerce attributes.
+ *
+ * @param WC_Product $product Product object.
+ * @return array
+ */
+function goldenbee_get_product_specs_for_display( $product ) {
+	if ( ! $product || ! is_a( $product, 'WC_Product' ) ) {
+		return array();
+	}
+
+	$product_id = $product->get_id();
+	$specs      = array();
+
+	for ( $i = 1; $i <= 8; $i++ ) {
+		$group = goldenbee_get_product_field( 'product_spec_' . $i, $product_id, array() );
+		if ( ! is_array( $group ) ) {
+			continue;
+		}
+
+		$label = isset( $group['label'] ) ? trim( (string) $group['label'] ) : '';
+		$value = isset( $group['value'] ) ? trim( (string) $group['value'] ) : '';
+		if ( '' !== $label && '' !== $value ) {
+			$specs[] = array(
+				'label' => $label,
+				'value' => $value,
+			);
+		}
+	}
+
+	foreach ( $product->get_attributes() as $attribute ) {
+		if ( ! $attribute->get_visible() ) {
+			continue;
+		}
+
+		$values = array();
+		if ( $attribute->is_taxonomy() ) {
+			$values = wc_get_product_terms( $product_id, $attribute->get_name(), array( 'fields' => 'names' ) );
+		} else {
+			$values = $attribute->get_options();
+		}
+
+		if ( empty( $values ) ) {
+			continue;
+		}
+
+		$specs[] = array(
+			'label' => wc_attribute_label( $attribute->get_name() ),
+			'value' => implode( ', ', array_map( 'wc_clean', $values ) ),
+		);
+	}
+
+	if ( $product->has_dimensions() ) {
+		$specs[] = array(
+			'label' => __( 'Kich thuoc', 'goldenbee' ),
+			'value' => wc_format_dimensions( $product->get_dimensions( false ) ),
+		);
+	}
+
+	if ( $product->has_weight() ) {
+		$specs[] = array(
+			'label' => __( 'Trong luong', 'goldenbee' ),
+			'value' => wc_format_weight( $product->get_weight() ),
+		);
+	}
+
+	return $specs;
+}
+
+/**
+ * Default selling points when product ACF is empty.
+ *
+ * @return array
+ */
+function goldenbee_default_product_highlights() {
+	return array(
+		__( 'Vat lieu nhua PVC/ASA ben mau, han che an mon trong moi truong khac nghiet.', 'goldenbee' ),
+		__( 'Trong luong nhe, de van chuyen va rut ngan thoi gian thi cong.', 'goldenbee' ),
+		__( 'Phu hop mai nha xuong, cong trinh dan dung va he vat lieu xanh.', 'goldenbee' ),
+	);
+}
+
+/**
+ * Default product benefit cards when product ACF is empty.
+ *
+ * @return array
+ */
+function goldenbee_default_product_benefits() {
+	return array(
+		array(
+			'title' => __( 'Ben mau ngoai troi', 'goldenbee' ),
+			'text'  => __( 'Lop be mat ASA/PVC giup han che phai mau va an mon khi lap dat trong dieu kien nong am.', 'goldenbee' ),
+		),
+		array(
+			'title' => __( 'Thi cong gon nhe', 'goldenbee' ),
+			'text'  => __( 'Tam lop nhe hon vat lieu truyen thong, phu hop cong trinh can rut ngan thoi gian van chuyen va lap dat.', 'goldenbee' ),
+		),
+		array(
+			'title' => __( 'Dong bo phu kien', 'goldenbee' ),
+			'text'  => __( 'Co he phu kien di kem cho noc, suon, vien va vi tri tiep giap de mai hoan thien dep hon.', 'goldenbee' ),
+		),
+	);
+}

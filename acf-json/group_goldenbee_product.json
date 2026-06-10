@@ -1,0 +1,557 @@
+{
+    "key": "group_goldenbee_product",
+    "title": "Chi tiet san pham Golden Bee",
+    "fields": [
+        {
+            "key": "field_gb_product_help",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Cac truong nay bo sung noi dung cho trang chi tiet san pham. Neu de trong, theme se dung du lieu mac dinh tu WooCommerce."
+        },
+        {
+            "key": "field_gb_product_subtitle",
+            "label": "Mo ta ngan noi bat",
+            "name": "product_subtitle",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_gb_product_badge",
+            "label": "Nhan noi bat",
+            "name": "product_badge",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_warranty",
+            "label": "Bao hanh",
+            "name": "product_warranty",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_material",
+            "label": "Vat lieu",
+            "name": "product_material",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_origin",
+            "label": "Xuat xu / thuong hieu",
+            "name": "product_origin",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_color_note",
+            "label": "Ghi chu mau sac",
+            "name": "product_color_note",
+            "type": "textarea",
+            "rows": 2
+        },
+        {
+            "key": "field_gb_product_install_note",
+            "label": "Ghi chu thi cong",
+            "name": "product_install_note",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_gb_product_install_content",
+            "label": "Noi dung huong dan thi cong",
+            "name": "product_install_content",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 1
+        },
+        {
+            "key": "field_gb_product_cta_note",
+            "label": "Ghi chu tu van",
+            "name": "product_cta_note",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_gb_product_download_url",
+            "label": "Link catalogue / bang gia",
+            "name": "product_download_url",
+            "type": "url"
+        },
+        {
+            "key": "field_gb_product_download_label",
+            "label": "Chu nut tai lieu",
+            "name": "product_download_label",
+            "type": "text",
+            "default_value": "Click xem CATALOGUE san pham"
+        },
+        {
+            "key": "field_gb_product_highlights_tab",
+            "label": "Diem noi bat",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_product_highlight_1",
+            "label": "Diem noi bat 1",
+            "name": "product_highlight_1",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_highlight_2",
+            "label": "Diem noi bat 2",
+            "name": "product_highlight_2",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_highlight_3",
+            "label": "Diem noi bat 3",
+            "name": "product_highlight_3",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_highlight_4",
+            "label": "Diem noi bat 4",
+            "name": "product_highlight_4",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_specs_tab",
+            "label": "Thong so ky thuat",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_product_spec_1",
+            "label": "Thong so 1",
+            "name": "product_spec_1",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_1_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_1_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_2",
+            "label": "Thong so 2",
+            "name": "product_spec_2",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_2_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_2_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_3",
+            "label": "Thong so 3",
+            "name": "product_spec_3",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_3_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_3_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_4",
+            "label": "Thong so 4",
+            "name": "product_spec_4",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_4_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_4_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_5",
+            "label": "Thong so 5",
+            "name": "product_spec_5",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_5_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_5_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_6",
+            "label": "Thong so 6",
+            "name": "product_spec_6",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_6_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_6_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_7",
+            "label": "Thong so 7",
+            "name": "product_spec_7",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_7_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_7_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_spec_8",
+            "label": "Thong so 8",
+            "name": "product_spec_8",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_spec_8_label",
+                    "label": "Ten thong so",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_spec_8_value",
+                    "label": "Gia tri",
+                    "name": "value",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_applications_tab",
+            "label": "Ung dung",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_product_application_1",
+            "label": "Ung dung 1",
+            "name": "product_application_1",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_application_2",
+            "label": "Ung dung 2",
+            "name": "product_application_2",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_application_3",
+            "label": "Ung dung 3",
+            "name": "product_application_3",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_application_4",
+            "label": "Ung dung 4",
+            "name": "product_application_4",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_images_tab",
+            "label": "Anh noi dung",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_product_product_specs_image",
+            "label": "Anh thong tin ky thuat / catalogue",
+            "name": "product_specs_image",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_content",
+            "label": "Noi dung hinh anh thi cong thuc te",
+            "name": "product_real_content",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 1
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_1",
+            "label": "Anh thi cong thuc te 1",
+            "name": "product_real_image_1",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_2",
+            "label": "Anh thi cong thuc te 2",
+            "name": "product_real_image_2",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_3",
+            "label": "Anh thi cong thuc te 3",
+            "name": "product_real_image_3",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_4",
+            "label": "Anh thi cong thuc te 4",
+            "name": "product_real_image_4",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_5",
+            "label": "Anh thi cong thuc te 5",
+            "name": "product_real_image_5",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_6",
+            "label": "Anh thi cong thuc te 6",
+            "name": "product_real_image_6",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_7",
+            "label": "Anh thi cong thuc te 7",
+            "name": "product_real_image_7",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_real_product_real_image_8",
+            "label": "Anh thi cong thuc te 8",
+            "name": "product_real_image_8",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_product_media_tab",
+            "label": "Video va FAQ",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_product_video_title",
+            "label": "Tieu de video",
+            "name": "product_video_title",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_product_video_url",
+            "label": "Link video YouTube/Vimeo",
+            "name": "product_video_url",
+            "type": "url"
+        },
+        {
+            "key": "field_gb_product_faq_1",
+            "label": "FAQ 1",
+            "name": "product_faq_1",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_faq_1_question",
+                    "label": "Cau hoi",
+                    "name": "question",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_faq_1_answer",
+                    "label": "Tra loi",
+                    "name": "answer",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_faq_2",
+            "label": "FAQ 2",
+            "name": "product_faq_2",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_faq_2_question",
+                    "label": "Cau hoi",
+                    "name": "question",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_faq_2_answer",
+                    "label": "Tra loi",
+                    "name": "answer",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_faq_3",
+            "label": "FAQ 3",
+            "name": "product_faq_3",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_faq_3_question",
+                    "label": "Cau hoi",
+                    "name": "question",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_faq_3_answer",
+                    "label": "Tra loi",
+                    "name": "answer",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_product_faq_4",
+            "label": "FAQ 4",
+            "name": "product_faq_4",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_product_faq_4_question",
+                    "label": "Cau hoi",
+                    "name": "question",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_product_faq_4_answer",
+                    "label": "Tra loi",
+                    "name": "answer",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "modified": 1781018637
+}

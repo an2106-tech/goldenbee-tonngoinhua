@@ -1,0 +1,1368 @@
+{
+    "key": "group_goldenbee_home",
+    "title": "Trang chủ Golden Bee",
+    "fields": [
+        {
+            "key": "field_gb_tab_banner",
+            "label": "Banner (Slider)",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_hero_help",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Toi da 3 slide. Moi slide gom anh, tieu de, mo ta va nut."
+        },
+        {
+            "key": "field_gb_slide1",
+            "label": "Slide 1",
+            "name": "slide_1",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_gb_slide1_slide_image",
+                    "label": "Anh nen",
+                    "name": "slide_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_slide1_title",
+                    "label": "Tieu de",
+                    "name": "slide_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_slide1_description",
+                    "label": "Mo ta ngan",
+                    "name": "slide_description",
+                    "type": "textarea",
+                    "rows": 2
+                },
+                {
+                    "key": "field_gb_slide1_button_text",
+                    "label": "Chu nut",
+                    "name": "slide_button_text",
+                    "type": "text",
+                    "default_value": "Xem san pham"
+                },
+                {
+                    "key": "field_gb_slide1_button_url",
+                    "label": "Link nut",
+                    "name": "slide_button_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_slide2",
+            "label": "Slide 2",
+            "name": "slide_2",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_gb_slide2_slide_image",
+                    "label": "Anh nen",
+                    "name": "slide_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_slide2_title",
+                    "label": "Tieu de",
+                    "name": "slide_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_slide2_description",
+                    "label": "Mo ta ngan",
+                    "name": "slide_description",
+                    "type": "textarea",
+                    "rows": 2
+                },
+                {
+                    "key": "field_gb_slide2_button_text",
+                    "label": "Chu nut",
+                    "name": "slide_button_text",
+                    "type": "text",
+                    "default_value": "Xem san pham"
+                },
+                {
+                    "key": "field_gb_slide2_button_url",
+                    "label": "Link nut",
+                    "name": "slide_button_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_slide3",
+            "label": "Slide 3",
+            "name": "slide_3",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_gb_slide3_slide_image",
+                    "label": "Anh nen",
+                    "name": "slide_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_slide3_title",
+                    "label": "Tieu de",
+                    "name": "slide_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_slide3_description",
+                    "label": "Mo ta ngan",
+                    "name": "slide_description",
+                    "type": "textarea",
+                    "rows": 2
+                },
+                {
+                    "key": "field_gb_slide3_button_text",
+                    "label": "Chu nut",
+                    "name": "slide_button_text",
+                    "type": "text",
+                    "default_value": "Xem san pham"
+                },
+                {
+                    "key": "field_gb_slide3_button_url",
+                    "label": "Link nut",
+                    "name": "slide_button_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_tab_intro",
+            "label": "Giới thiệu",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_intro_title",
+            "label": "Tiêu đề",
+            "name": "intro_title",
+            "type": "text",
+            "default_value": "GIẢI PHÁP TẤM LỢP TÔN NGÓI NHỰA XANH GREEN BM CHO XÂY DỰNG BỀN VỮNG"
+        },
+        {
+            "key": "field_gb_intro_content",
+            "label": "Nội dung",
+            "name": "intro_content",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "<p>Dòng sản phẩm Tôn Ngói Nhựa Xanh (GREEN BM) là hệ giải pháp duy nhất đạt được bản quyền độc quyền toàn quốc của Công ty CP Đầu tư Xuất nhập khẩu Vật liệu xanh (Green Materials JSC). Chúng tôi hiểu rằng tương lai xây dựng phải đồng điệu với sự bảo vệ môi trường. Với cam kết vững chắc, chúng tôi chuyên tâm mang đến cho Quý khách hàng trên khắp Việt Nam những sản phẩm vật liệu xây dựng chất lượng. Bao gồm tôn nhựa Green BM, ngói nhựa Green BM hàng đầu. Sử dụng công nghệ sản xuất tiên tiến, nhựa PVC và lớp ASA. Góp phần vào việc bảo vệ môi trường bền vững. Chúng tôi rất hân hạnh được đồng hành cùng Quý khách hàng trong hành trình xây dựng. Có trách nhiệm và thân thiện với môi trường!</p>"
+        },
+        {
+            "key": "field_gb_intro_btn_text",
+            "label": "Chữ nút",
+            "name": "intro_button_text",
+            "type": "text",
+            "default_value": "Xem thêm"
+        },
+        {
+            "key": "field_gb_intro_btn_url",
+            "label": "Link nút",
+            "name": "intro_button_url",
+            "type": "url",
+            "default_value": "/gioi-thieu/"
+        },
+        {
+            "key": "field_gb_tab_intro_video",
+            "label": "Video giới thiệu",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_intro_video_title",
+            "label": "Tiêu đề video",
+            "name": "intro_video_title",
+            "type": "text",
+            "default_value": "Xem video giới thiệu GREEN BM"
+        },
+        {
+            "key": "field_gb_intro_video_text",
+            "label": "Mô tả video",
+            "name": "intro_video_text",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "<p>Video giới thiệu sản phẩm Tôn Ngói Nhựa Xanh GREEN BM và giải pháp xây dựng bền vững.</p>"
+        },
+        {
+            "key": "field_gb_intro_video_url",
+            "label": "Link video YouTube",
+            "name": "intro_video_url",
+            "type": "url",
+            "default_value": "https://www.youtube.com/embed/4v6ZrRwVxBo"
+        },
+        {
+            "key": "field_gb_intro_slider_shortcode",
+            "label": "Shortcode slider",
+            "name": "intro_slider_shortcode",
+            "type": "textarea",
+            "instructions": "Dán shortcode Smart Slider 3 tại đây, ví dụ [smartslider3 slider=\"3\"].",
+            "new_lines": "none"
+        },
+        {
+            "key": "field_gb_tab_events",
+            "label": "Hình ảnh sự kiện",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_events_title",
+            "label": "Tieu de section",
+            "name": "events_title",
+            "type": "text",
+            "default_value": "Hinh anh Green BM tai cac su kien"
+        },
+        {
+            "key": "field_gb_events_help",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Upload toi da 40 anh su kien."
+        },
+        {
+            "key": "field_gb_evt_event_image_1",
+            "label": "Anh su kien 1",
+            "name": "event_image_1",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_2",
+            "label": "Anh su kien 2",
+            "name": "event_image_2",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_3",
+            "label": "Anh su kien 3",
+            "name": "event_image_3",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_4",
+            "label": "Anh su kien 4",
+            "name": "event_image_4",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_5",
+            "label": "Anh su kien 5",
+            "name": "event_image_5",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_6",
+            "label": "Anh su kien 6",
+            "name": "event_image_6",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_7",
+            "label": "Anh su kien 7",
+            "name": "event_image_7",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_8",
+            "label": "Anh su kien 8",
+            "name": "event_image_8",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_9",
+            "label": "Anh su kien 9",
+            "name": "event_image_9",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_10",
+            "label": "Anh su kien 10",
+            "name": "event_image_10",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_11",
+            "label": "Anh su kien 11",
+            "name": "event_image_11",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_12",
+            "label": "Anh su kien 12",
+            "name": "event_image_12",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_13",
+            "label": "Anh su kien 13",
+            "name": "event_image_13",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_14",
+            "label": "Anh su kien 14",
+            "name": "event_image_14",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_15",
+            "label": "Anh su kien 15",
+            "name": "event_image_15",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_16",
+            "label": "Anh su kien 16",
+            "name": "event_image_16",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_17",
+            "label": "Anh su kien 17",
+            "name": "event_image_17",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_18",
+            "label": "Anh su kien 18",
+            "name": "event_image_18",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_19",
+            "label": "Anh su kien 19",
+            "name": "event_image_19",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_20",
+            "label": "Anh su kien 20",
+            "name": "event_image_20",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_21",
+            "label": "Anh su kien 21",
+            "name": "event_image_21",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_22",
+            "label": "Anh su kien 22",
+            "name": "event_image_22",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_23",
+            "label": "Anh su kien 23",
+            "name": "event_image_23",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_24",
+            "label": "Anh su kien 24",
+            "name": "event_image_24",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_25",
+            "label": "Anh su kien 25",
+            "name": "event_image_25",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_26",
+            "label": "Anh su kien 26",
+            "name": "event_image_26",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_27",
+            "label": "Anh su kien 27",
+            "name": "event_image_27",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_28",
+            "label": "Anh su kien 28",
+            "name": "event_image_28",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_29",
+            "label": "Anh su kien 29",
+            "name": "event_image_29",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_30",
+            "label": "Anh su kien 30",
+            "name": "event_image_30",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_31",
+            "label": "Anh su kien 31",
+            "name": "event_image_31",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_32",
+            "label": "Anh su kien 32",
+            "name": "event_image_32",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_33",
+            "label": "Anh su kien 33",
+            "name": "event_image_33",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_34",
+            "label": "Anh su kien 34",
+            "name": "event_image_34",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_35",
+            "label": "Anh su kien 35",
+            "name": "event_image_35",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_36",
+            "label": "Anh su kien 36",
+            "name": "event_image_36",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_37",
+            "label": "Anh su kien 37",
+            "name": "event_image_37",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_38",
+            "label": "Anh su kien 38",
+            "name": "event_image_38",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_39",
+            "label": "Anh su kien 39",
+            "name": "event_image_39",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_evt_event_image_40",
+            "label": "Anh su kien 40",
+            "name": "event_image_40",
+            "type": "image",
+            "instructions": "Chon hoac upload anh jpg, png, webp.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_gb_tab_media",
+            "label": "Truyền thông",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_media_title",
+            "label": "Tieu de section",
+            "name": "media_title",
+            "type": "text",
+            "default_value": "Truyen thong noi ve chung toi"
+        },
+        {
+            "key": "field_gb_quote1",
+            "label": "Trich dan 1",
+            "name": "quote_1",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_q1_quote_logo",
+                    "label": "Logo bao",
+                    "name": "quote_logo",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_quote1_src",
+                    "label": "Ten nguon",
+                    "name": "quote_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_quote1_txt",
+                    "label": "Noi dung trich dan",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_quote2",
+            "label": "Trich dan 2",
+            "name": "quote_2",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_q2_quote_logo",
+                    "label": "Logo bao",
+                    "name": "quote_logo",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_quote2_src",
+                    "label": "Ten nguon",
+                    "name": "quote_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_quote2_txt",
+                    "label": "Noi dung trich dan",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_quote3",
+            "label": "Trich dan 3",
+            "name": "quote_3",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_q3_quote_logo",
+                    "label": "Logo bao",
+                    "name": "quote_logo",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_quote3_src",
+                    "label": "Ten nguon",
+                    "name": "quote_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_quote3_txt",
+                    "label": "Noi dung trich dan",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_quote4",
+            "label": "Trich dan 4",
+            "name": "quote_4",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_q4_quote_logo",
+                    "label": "Logo bao",
+                    "name": "quote_logo",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_quote4_src",
+                    "label": "Ten nguon",
+                    "name": "quote_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_quote4_txt",
+                    "label": "Noi dung trich dan",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_quote5",
+            "label": "Trich dan 5",
+            "name": "quote_5",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_q5_quote_logo",
+                    "label": "Logo bao",
+                    "name": "quote_logo",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_quote5_src",
+                    "label": "Ten nguon",
+                    "name": "quote_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_quote5_txt",
+                    "label": "Noi dung trich dan",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_quote6",
+            "label": "Trich dan 6",
+            "name": "quote_6",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_q6_quote_logo",
+                    "label": "Logo bao",
+                    "name": "quote_logo",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_quote6_src",
+                    "label": "Ten nguon",
+                    "name": "quote_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_quote6_txt",
+                    "label": "Noi dung trich dan",
+                    "name": "quote_text",
+                    "type": "textarea",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_gb_press1",
+            "label": "Tin bao 1",
+            "name": "press_1",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pr1_press_image",
+                    "label": "Anh",
+                    "name": "press_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_press1_title",
+                    "label": "Tieu de",
+                    "name": "press_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_press1_excerpt",
+                    "label": "Mo ta ngan",
+                    "name": "press_excerpt",
+                    "type": "textarea",
+                    "rows": 3
+                },
+                {
+                    "key": "field_gb_press1_source",
+                    "label": "Nguon",
+                    "name": "press_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_press1_link",
+                    "label": "Link bai viet",
+                    "name": "press_link",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_press2",
+            "label": "Tin bao 2",
+            "name": "press_2",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pr2_press_image",
+                    "label": "Anh",
+                    "name": "press_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_press2_title",
+                    "label": "Tieu de",
+                    "name": "press_title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_press2_excerpt",
+                    "label": "Mo ta ngan",
+                    "name": "press_excerpt",
+                    "type": "textarea",
+                    "rows": 3
+                },
+                {
+                    "key": "field_gb_press2_source",
+                    "label": "Nguon",
+                    "name": "press_source",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_press2_link",
+                    "label": "Link bai viet",
+                    "name": "press_link",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_media_video_url",
+            "label": "URL video YouTube",
+            "name": "media_video_url",
+            "type": "url",
+            "default_value": "https://www.youtube.com/watch?v=4v6ZrRwVxBo"
+        },
+        {
+            "key": "field_gb_media_video_caption",
+            "label": "Chu thich video",
+            "name": "media_video_caption",
+            "type": "text"
+        },
+        {
+            "key": "field_gb_tab_project_videos",
+            "label": "Video công trình",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_project_videos_title",
+            "label": "Tieu de section",
+            "name": "project_videos_title",
+            "type": "text",
+            "default_value": "Video cac cong trinh su dung ton ngoi nhua Green BM"
+        },
+        {
+            "key": "field_gb_project_video1",
+            "label": "Video cong trinh 1",
+            "name": "project_video_1",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pv1_project_video_image",
+                    "label": "Anh thumbnail",
+                    "name": "project_video_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_project_video1_url",
+                    "label": "Link video",
+                    "name": "project_video_url",
+                    "type": "url"
+                },
+                {
+                    "key": "field_gb_project_video1_title",
+                    "label": "Tieu de video",
+                    "name": "project_video_title",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_project_video2",
+            "label": "Video cong trinh 2",
+            "name": "project_video_2",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pv2_project_video_image",
+                    "label": "Anh thumbnail",
+                    "name": "project_video_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_project_video2_url",
+                    "label": "Link video",
+                    "name": "project_video_url",
+                    "type": "url"
+                },
+                {
+                    "key": "field_gb_project_video2_title",
+                    "label": "Tieu de video",
+                    "name": "project_video_title",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_project_video3",
+            "label": "Video cong trinh 3",
+            "name": "project_video_3",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pv3_project_video_image",
+                    "label": "Anh thumbnail",
+                    "name": "project_video_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_project_video3_url",
+                    "label": "Link video",
+                    "name": "project_video_url",
+                    "type": "url"
+                },
+                {
+                    "key": "field_gb_project_video3_title",
+                    "label": "Tieu de video",
+                    "name": "project_video_title",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_project_video4",
+            "label": "Video cong trinh 4",
+            "name": "project_video_4",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pv4_project_video_image",
+                    "label": "Anh thumbnail",
+                    "name": "project_video_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_project_video4_url",
+                    "label": "Link video",
+                    "name": "project_video_url",
+                    "type": "url"
+                },
+                {
+                    "key": "field_gb_project_video4_title",
+                    "label": "Tieu de video",
+                    "name": "project_video_title",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_project_video5",
+            "label": "Video cong trinh 5",
+            "name": "project_video_5",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pv5_project_video_image",
+                    "label": "Anh thumbnail",
+                    "name": "project_video_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_project_video5_url",
+                    "label": "Link video",
+                    "name": "project_video_url",
+                    "type": "url"
+                },
+                {
+                    "key": "field_gb_project_video5_title",
+                    "label": "Tieu de video",
+                    "name": "project_video_title",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_project_video6",
+            "label": "Video cong trinh 6",
+            "name": "project_video_6",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_pv6_project_video_image",
+                    "label": "Anh thumbnail",
+                    "name": "project_video_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_project_video6_url",
+                    "label": "Link video",
+                    "name": "project_video_url",
+                    "type": "url"
+                },
+                {
+                    "key": "field_gb_project_video6_title",
+                    "label": "Tieu de video",
+                    "name": "project_video_title",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_tab_partners",
+            "label": "Khách hàng",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_gb_partners_title",
+            "label": "Tieu de section",
+            "name": "partners_title",
+            "type": "text",
+            "default_value": "Khach hang cua chung toi"
+        },
+        {
+            "key": "field_gb_client1",
+            "label": "Khach hang 1",
+            "name": "client_1",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_cli1_client_image",
+                    "label": "Hinh anh",
+                    "name": "client_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_cli1_name",
+                    "label": "Ten cong trinh",
+                    "name": "client_name",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_cli1_url",
+                    "label": "Link lien ket",
+                    "name": "client_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_client2",
+            "label": "Khach hang 2",
+            "name": "client_2",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_cli2_client_image",
+                    "label": "Hinh anh",
+                    "name": "client_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_cli2_name",
+                    "label": "Ten cong trinh",
+                    "name": "client_name",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_cli2_url",
+                    "label": "Link lien ket",
+                    "name": "client_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_client3",
+            "label": "Khach hang 3",
+            "name": "client_3",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_cli3_client_image",
+                    "label": "Hinh anh",
+                    "name": "client_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_cli3_name",
+                    "label": "Ten cong trinh",
+                    "name": "client_name",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_cli3_url",
+                    "label": "Link lien ket",
+                    "name": "client_url",
+                    "type": "url"
+                }
+            ]
+        },
+        {
+            "key": "field_gb_client4",
+            "label": "Khach hang 4",
+            "name": "client_4",
+            "type": "group",
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_gb_cli4_client_image",
+                    "label": "Hinh anh",
+                    "name": "client_image",
+                    "type": "image",
+                    "instructions": "Chon hoac upload anh jpg, png, webp.",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "jpg,jpeg,png,webp"
+                },
+                {
+                    "key": "field_gb_cli4_name",
+                    "label": "Ten cong trinh",
+                    "name": "client_name",
+                    "type": "text"
+                },
+                {
+                    "key": "field_gb_cli4_url",
+                    "label": "Link lien ket",
+                    "name": "client_url",
+                    "type": "url"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "modified": 1781018637
+}

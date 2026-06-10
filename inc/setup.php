@@ -62,6 +62,10 @@ add_action( 'wp_enqueue_scripts', 'goldenbee_enqueue_assets' );
  */
 function goldenbee_enqueue_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
+	$style_path    = get_template_directory() . '/assets/style.css';
+	$script_path   = get_template_directory() . '/assets/js/main.js';
+	$style_version = file_exists( $style_path ) ? filemtime( $style_path ) : $theme_version;
+	$script_version = file_exists( $script_path ) ? filemtime( $script_path ) : $theme_version;
 
 	wp_enqueue_style(
 		'goldenbee-fonts',
@@ -88,7 +92,7 @@ function goldenbee_enqueue_assets() {
 		'goldenbee-main',
 		get_template_directory_uri() . '/assets/js/main.js',
 		array(),
-		$theme_version,
+		$script_version,
 		true
 	);
 

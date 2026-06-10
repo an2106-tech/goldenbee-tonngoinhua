@@ -231,13 +231,40 @@ function goldenbee_register_acf_field_groups() {
 			'active'                => true,
 		) );
 	}
+
+	// ACF Field Group for Product
+	acf_add_local_field_group( array(
+		'key'                   => 'group_goldenbee_product',
+		'title'                 => __( 'Chi tiet san pham Golden Bee', 'goldenbee' ),
+		'fields'                => goldenbee_acf_product_detail_fields(),
+		'location'              => array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'product',
+				),
+			),
+		),
+		'menu_order'            => 1,
+		'position'              => 'normal',
+		'style'                 => 'default',
+		'label_placement'       => 'top',
+		'instruction_placement' => 'label',
+		'active'                => true,
+	) );
 }
 
 add_filter( 'acf/settings/save_json', 'goldenbee_acf_json_save_path' );
 add_filter( 'acf/settings/load_json', 'goldenbee_acf_json_load_paths' );
 
 function goldenbee_acf_json_save_path( $path ) {
-	return GOLDENBEE_DIR . '/acf-json';
+	$json_path = GOLDENBEE_DIR . '/acf-json';
+	if ( ! is_dir( $json_path ) ) {
+		wp_mkdir_p( $json_path );
+	}
+
+	return $json_path;
 }
 
 function goldenbee_acf_json_load_paths( $paths ) {

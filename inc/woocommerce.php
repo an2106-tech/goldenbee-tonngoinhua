@@ -12,6 +12,9 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 
 add_action( 'woocommerce_before_main_content', 'goldenbee_wc_wrapper_start', 10 );
 add_action( 'woocommerce_after_main_content', 'goldenbee_wc_wrapper_end', 10 );
@@ -37,7 +40,20 @@ add_filter( 'woocommerce_product_add_to_cart_text', 'goldenbee_add_to_cart_text'
  * @return string
  */
 function goldenbee_add_to_cart_text() {
+	if ( is_product() ) {
+		return __( 'ADD TO CART', 'goldenbee' );
+	}
+
 	return __( 'Xem ngay', 'goldenbee' );
+}
+
+/**
+ * Contact price HTML.
+ *
+ * @return string
+ */
+function goldenbee_contact_price_html() {
+	return '<span class="price gb-contact-price"><span class="gb-contact-price__label">' . esc_html__( 'Giá:', 'goldenbee' ) . '</span> <span class="gb-contact-price__value">' . esc_html__( 'Liên hệ', 'goldenbee' ) . '</span></span>';
 }
 
 add_filter( 'woocommerce_get_price_html', 'goldenbee_price_html', 10, 2 );
@@ -58,15 +74,30 @@ function goldenbee_price_html( $price, $product ) {
 		$prices = $product->get_variation_prices( true );
 		$min    = current( $prices['price'] );
 		if ( '' === $min || false === $min ) {
-			return '<span class="price text-brand font-semibold">' . esc_html__( 'Giá: Liên hệ', 'goldenbee' ) . '</span>';
+			return goldenbee_contact_price_html();
 		}
 	}
 
 	if ( '' === $product->get_price() ) {
-		return '<span class="price text-brand font-semibold">' . esc_html__( 'Giá: Liên hệ', 'goldenbee' ) . '</span>';
+		return goldenbee_contact_price_html();
 	}
 
 	return $price;
+}
+
+add_filter( 'woocommerce_output_related_products_args', 'goldenbee_related_products_args' );
+
+/**
+ * Related products carousel source size.
+ *
+ * @param array $args Related product args.
+ * @return array
+ */
+function goldenbee_related_products_args( $args ) {
+	$args['posts_per_page'] = 8;
+	$args['columns']        = 4;
+
+	return $args;
 }
 
 add_action( 'pre_get_posts', 'goldenbee_filter_products_by_color' );

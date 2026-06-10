@@ -40,7 +40,7 @@ $catalog = goldenbee_get_product_catalog();
 			$cat_link = goldenbee_category_link( $category['slug'] );
 			?>
 			<div class="title-news">
-				<h2><span><a href="<?php echo esc_url( $cat_link ); ?>" class="text-white no-underline"><?php echo esc_html( $category['name'] ); ?></a></span></h2>
+				<h2><span><a href="<?php echo esc_url( $cat_link ); ?>"><?php echo esc_html( $category['name'] ); ?></a></span></h2>
 				<div class="right-lsm">
 					<a class="link-see-more" href="<?php echo esc_url( $cat_link ); ?>">
 						<?php esc_html_e( 'Xem tất cả', 'goldenbee' ); ?> »
