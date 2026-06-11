@@ -14,7 +14,7 @@ define( 'GOLDENBEE_URI', get_template_directory_uri() );
 require GOLDENBEE_DIR . '/inc/helpers.php';
 require GOLDENBEE_DIR . '/inc/setup.php';
 require GOLDENBEE_DIR . '/inc/customizer.php';
-require GOLDENBEE_DIR . '/inc/cpt-project.php';
+require GOLDENBEE_DIR . '/inc/custom-post-types.php';
 require GOLDENBEE_DIR . '/inc/seed-products.php';
 require GOLDENBEE_DIR . '/inc/theme-activation.php';
 require GOLDENBEE_DIR . '/inc/dai-ly-form-handler.php';

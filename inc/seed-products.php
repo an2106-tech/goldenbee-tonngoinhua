@@ -336,7 +336,7 @@ function goldenbee_create_default_menu() {
 		array( 'title' => 'Trang chủ', 'url' => home_url( '/' ) ),
 		array( 'title' => 'Giới thiệu', 'slug' => 'gioi-thieu' ),
 		array( 'title' => 'Sản phẩm', 'url' => class_exists( 'WooCommerce' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ),
-		array( 'title' => 'Công trình', 'url' => get_post_type_archive_link( 'project' ) ),
+		array( 'title' => 'Công trình', 'url' => get_post_type_archive_link( 'cong-trinh' ) ),
 		array( 'title' => 'Tin tức', 'slug' => 'tin-tuc' ),
 		array( 'title' => 'Đại lý', 'slug' => 'dai-ly' ),
 		array( 'title' => 'Liên hệ', 'slug' => 'lien-he' ),

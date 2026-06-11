@@ -25,11 +25,10 @@ get_header();
         <?php
         // KHỞI TẠO QUERY LẤY BÀI VIẾT THEO DANH MỤC
         $args = array(
-            'post_type'      => 'post',                 // Đổi từ 'page' thành 'post' để lấy bài viết
-            'posts_per_page' => 12,                     // Số lượng bài viết trên mỗi trang (thay -1 bằng số cụ thể nếu muốn phân trang, hoặc giữ -1 để lấy hết)
-            'category_name'  => 'tu-van',   // ĐIỀU CHỈNH: Nhập SLUG của các danh mục vào đây (phân cách bằng dấu phẩy)
-            'orderby'        => 'date',                 // Sắp xếp bài viết theo ngày đăng
-            'order'          => 'DESC',                 // Bài viết mới nhất xếp lên đầu
+            'post_type'      => 'tu-van',
+            'posts_per_page' => 12,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
         );
 
         $tv_query = new WP_Query( $args );

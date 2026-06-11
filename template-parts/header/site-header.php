@@ -140,7 +140,7 @@ $is_tuvan_active = is_page('tu-van-huong-dan') || is_page('huong-dan-thi-cong') 
                         </ul>
                     </li>
 
-                    <li><a href="<?php echo esc_url(get_post_type_archive_link('project')); ?>" class="<?php echo esc_attr($nav_link_class . ' ' . ((is_post_type_archive('project') || is_singular('project')) ? $nav_active_class : $nav_inactive_class)); ?>"><?php esc_html_e('CÔNG TRÌNH', 'goldenbee'); ?></a></li>
+                    <li><a href="<?php echo esc_url(get_post_type_archive_link('cong-trinh')); ?>" class="<?php echo esc_attr($nav_link_class . ' ' . ((is_post_type_archive('cong-trinh') || is_singular('cong-trinh')) ? $nav_active_class : $nav_inactive_class)); ?>"><?php esc_html_e('CÔNG TRÌNH', 'goldenbee'); ?></a></li>
 
                     <li class="relative group dropdown-nav-item">
 

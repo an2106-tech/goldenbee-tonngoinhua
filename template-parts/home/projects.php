@@ -6,7 +6,7 @@
  */
 
 $projects = new WP_Query( array(
-	'post_type'      => 'project',
+	'post_type'      => 'cong-trinh',
 	'posts_per_page' => 6,
 	'post_status'    => 'publish',
 ) );
@@ -66,7 +66,7 @@ $projects = new WP_Query( array(
 		</div>
 
 		<div class="projects-home-footer">
-			<a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="projects-home-all-link"><?php esc_html_e( 'Xem tất cả công trình', 'goldenbee' ); ?></a>
+			<a href="<?php echo esc_url( get_post_type_archive_link( 'cong-trinh' ) ); ?>" class="projects-home-all-link"><?php esc_html_e( 'Xem tất cả công trình', 'goldenbee' ); ?></a>
 		</div>
 	</div>
 </section>
