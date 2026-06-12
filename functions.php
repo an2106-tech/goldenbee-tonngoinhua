@@ -38,6 +38,19 @@ function goldenbee_theme_activation_notice() {
 
 add_action( 'admin_notices', 'goldenbee_admin_notices' );
 
+add_action( 'wp_footer', 'goldenbee_render_floating_contact', 20 );
+
+/**
+ * Render floating contact buttons on all front-end templates.
+ */
+function goldenbee_render_floating_contact() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	get_template_part( 'template-parts/floating', 'contact' );
+}
+
 /**
  * Admin notices.
  */

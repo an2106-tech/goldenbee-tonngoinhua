@@ -96,12 +96,14 @@ function goldenbee_enqueue_assets() {
 		true
 	);
 
-	wp_enqueue_style(
-		'goldenbee-page-gioi-thieu',
-		get_template_directory_uri() . '/assets/css/page-gioi-thieu.css',
-		array( 'goldenbee-style' ),
-		$theme_version
-	);
+	if ( is_page_template( 'page-gioi-thieu.php' ) || is_page( 'gioi-thieu' ) ) {
+		wp_enqueue_style(
+			'goldenbee-page-gioi-thieu',
+			get_template_directory_uri() . '/assets/css/page-gioi-thieu.css',
+			array( 'goldenbee-style' ),
+			$theme_version
+		);
+	}
 
 	if ( is_page_template( 'page-dai-ly.php' ) || is_page( 'dai-ly' ) ) {
 		wp_enqueue_style(

@@ -1138,59 +1138,130 @@
   }
 
   .contact-social {
-    @apply fixed bottom-[10px] left-0 z-[99999] flex flex-col gap-0;
+    @apply hidden;
   }
 
   .contact-tus {
-    @apply relative flex items-center;
+    @apply relative block h-[70px] w-[90px];
   }
 
   .note-social {
-    @apply relative block h-[60px] w-[60px] cursor-pointer z-20 shrink-0;
+    @apply relative z-20 block h-[70px] w-[90px] shrink-0 cursor-pointer;
+    bottom: 25px;
   }
 
   .phone-vr-circle-fill {
-    @apply absolute left-0 top-0 h-[60px] w-[60px] rounded-full border-2 border-transparent;
-    background-color: rgba(230, 31, 36, 0.5);
-    animation: phone-pulse 2s infinite ease-in-out;
+    @apply absolute h-[65px] w-[65px] rounded-full border-2 border-transparent;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(230, 8, 8, 0.7);
+    box-shadow: 0 0 0 0 #c31d1d;
+    animation: contact-zoom 1.3s infinite;
   }
 
   .phone-vr-img-circle {
-    @apply absolute left-1/2 top-1/2 flex h-[44px] w-[44px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full shadow-md;
-    background-color: #e61f24;
+    @apply fixed flex h-[40px] w-[40px] items-center justify-center rounded-full shadow-md;
+    top: auto;
+    left: 25px;
+    z-index: 100000;
+    line-height: 40px;
+    background-color: #e60808;
+  }
+
+  .phoneFt .phone-vr-img-circle {
+    bottom: 184px;
+  }
+
+  .zaloFt .phone-vr-img-circle {
+    bottom: 114px;
+  }
+
+  .faceFt .phone-vr-img-circle {
+    bottom: 44px;
+  }
+
+  .phone-vr-img-circle a {
+    @apply flex h-full w-full items-center justify-center rounded-full text-white;
   }
 
   .phone-vr-img-circle img {
-    @apply h-[22px] w-[22px] object-contain;
-    animation: phone-shake 1.5s infinite ease-in-out;
+    @apply h-[25px] w-[25px] object-contain;
+    animation: phone-shake 1s infinite ease-in-out;
+  }
+
+  .phone-vr-img-circle svg {
+    @apply h-[25px] w-[25px] fill-current;
+    animation: phone-shake 1s infinite ease-in-out;
+  }
+
+  .faceFt .phone-vr-img-circle svg {
+    @apply h-[25px] w-[25px];
+  }
+
+  .faceFt .messenger-bolt {
+    fill: #2196f3;
   }
 
   .zaloFt .phone-vr-circle-fill {
-    background-color: rgba(33, 150, 243, 0.5);
+    background-color: rgba(33, 150, 243, 0.7);
+    box-shadow: 0 0 0 0 #2196f3;
   }
   .zaloFt .phone-vr-img-circle {
     background-color: #2196f3;
   }
 
   .faceFt .phone-vr-circle-fill {
-    background-color: rgba(33, 150, 243, 0.5);
+    background-color: rgba(33, 150, 243, 0.7);
+    box-shadow: 0 0 0 0 #2196f3;
   }
   .faceFt .phone-vr-img-circle {
     background-color: #2196f3;
   }
 
   .contact-bar {
-    @apply absolute left-[30px] top-1/2 -translate-y-1/2 whitespace-nowrap rounded-r-[20px] px-[20px] pl-[40px] py-[8px] text-[16px] font-bold text-white shadow-sm transition-all duration-300;
-    background-color: #e61f24;
-    z-index: 10;
+    @apply fixed left-[30px] whitespace-nowrap rounded-full px-[15px] pb-[7px] pl-[50px] pt-[8px] text-[16px] font-bold leading-[25px] text-white shadow-sm transition-all duration-300;
+    background-color: rgb(232, 58, 58);
+    z-index: 99998;
+  }
+
+  .phone-bar {
+    bottom: 170px;
   }
 
   .zaloFt .contact-bar {
     background-color: #2196f3;
   }
 
+  .zalo-bar {
+    bottom: 100px;
+  }
+
   .faceFt .contact-bar {
     background-color: #2196f3;
+  }
+
+  .fb-bar {
+    bottom: 30px;
+  }
+
+  .nguyenntu-contact {
+    @apply fixed bottom-0 left-0 z-[99999] w-full border-t border-white/60 bg-white md:hidden;
+  }
+
+  .nguyenntu-contact ul {
+    @apply grid grid-cols-4;
+  }
+
+  .nguyenntu-contact a {
+    @apply flex min-h-[58px] flex-col items-center justify-center gap-1 border-r border-gray-200 bg-[#003481] px-1 text-center text-[11px] font-bold leading-none text-white no-underline;
+  }
+
+  .nguyenntu-contact li:last-child a {
+    @apply border-r-0;
+  }
+
+  .nguyenntu-contact img {
+    @apply mx-auto h-[22px] w-[22px] object-contain;
   }
 
   @keyframes phone-shake {
@@ -1201,6 +1272,12 @@
     40% { transform: rotate(25deg) scale(1) skew(1deg); }
     50% { transform: rotate(0deg) scale(1) skew(1deg); }
     100% { transform: rotate(0deg) scale(1) skew(1deg); }
+  }
+
+  @keyframes contact-zoom {
+    0% { transform: scale(.9); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px transparent; }
+    100% { transform: scale(.9); box-shadow: 0 0 0 0 transparent; }
   }
 
   .back-to-top {
